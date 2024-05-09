@@ -24,14 +24,15 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd"></path>
                                     </svg>
-                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500"
-                                        aria-current="page">SKKM</span>
+                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500" aria-current="page">Validasi
+                                        SKKM</span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Pengelolaan SKKM</h1>
-                    <p class="text-gray-500 ">SKKM merupakan Satuan Kredit Kegiatan Mahasiswa. </p>
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Validasi Dokumen SKKM</h1>
+                    <p class="text-gray-500 ">Silahkan periksa dokumen dan kesesuaian dengan jenis kegiatan, lalu validasi
+                        dokumen jika memenuhi syarat dan sesuai.</p>
                 </div>
                 <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
                     <div class="flex items-center mb-4 sm:mb-0">
@@ -97,7 +98,7 @@
                                     @if ($document->status == 'Menunggu')
                                         <span
                                             class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300 border border-yellow-300">Menunggu
-                                            Validasi</span>
+                                        </span>
                                     @elseif($document->status == 'Validasi')
                                         <span
                                             class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300 border border-green-300">Validasi</span>
@@ -111,7 +112,7 @@
                                         class="text-blue-600 hover:underline">Document</a>
 
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-4 ">
                                     {{-- <a href="" data-id="{{ $document->id }}" class="validate_button">
                                         <button class="p-2 text-white bg-blue-600 rounded-xl">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
@@ -122,7 +123,7 @@
                                     </a> --}}
                                     <button id="validate_button" data-id="{{ $document->id }}"
                                         data-modal-target="popup-modal" data-modal-toggle="popup-modal"
-                                        class="p-2 text-white bg-green-600 rounded-xl" type="button">
+                                        class="p-2 mb-1 text-white bg-green-500 rounded-xl" type="button">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -148,34 +149,40 @@
             <div
                 class="sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center mb-4 sm:mb-0">
-
                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
-                            class="font-semibold text-gray-900 dark:text-white">1-20</span> of <span
-                            class="font-semibold text-gray-900 dark:text-white">2290</span></span>
+                            class="font-semibold text-gray-900 dark:text-white">{{ $documents->firstItem() }}-{{ $documents->lastItem() }}</span>
+                        of <span
+                            class="font-semibold text-gray-900 dark:text-white">{{ $documents->total() }}</span></span>
                 </div>
                 <div class="flex items-center space-x-3">
-                    <a href="#"
-                        class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                        <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        Previous
-                    </a>
-                    <a href="#"
-                        class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                        Next
-                        <svg class="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
+                    @if ($documents->previousPageUrl())
+                        <a href="{{ $documents->previousPageUrl() }}"
+                            class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Previous
+                        </a>
+                    @endif
+
+                    @if ($documents->nextPageUrl())
+                        <a href="{{ $documents->nextPageUrl() }}"
+                            class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Next
+                            <svg class="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    @endif
                 </div>
             </div>
+
         </div>
     </div>
     {{-- validate modal --}}

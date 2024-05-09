@@ -158,7 +158,7 @@ class DocumentController extends Controller
     {
         $documents = Document::whereHas('student', function ($query) {
             $query->where('lecture_id', auth()->user()->lecture->id);
-        })->get();
+        })->paginate(10);
         return view('dosen.skkm.index', compact('documents'));
     }
 

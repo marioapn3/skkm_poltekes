@@ -31,14 +31,15 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd"></path>
                                     </svg>
-                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500"
-                                        aria-current="page">SKKM</span>
+                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500" aria-current="page">Rekap
+                                        SKKM</span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Pengelolaan SKKM</h1>
-                    <p class="text-gray-500 ">SKKM merupakan Satuan Kredit Kegiatan Mahasiswa. </p>
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Rekap SKKM</h1>
+                    <p class="text-gray-500 ">Rekap Dokumen SKKM anda disini. SKKM merupakan Satuan Kredit Kegiatan
+                        Mahasiswa. </p>
                 </div>
                 <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
                     <div class="flex items-center mb-4 sm:mb-0">
@@ -223,7 +224,7 @@
                                     @if ($document->status == 'Menunggu')
                                         <span
                                             class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300 border border-yellow-300">Menunggu
-                                            Validasi</span>
+                                        </span>
                                     @elseif($document->status == 'Validasi')
                                         <span
                                             class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300 border border-green-300">Validasi</span>
