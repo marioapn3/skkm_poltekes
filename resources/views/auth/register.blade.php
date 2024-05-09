@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign In</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo_kemenkes_favicon.png') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -16,7 +18,7 @@
             <img src="{{ asset('assets/logo_kemenkes.png') }}" class="mr-4 h-11" alt="FlowBite Logo">
         </a>
         <!-- Card -->
-        <div class="w-full max-w-xl p-6 space-y-8 bg-white rounded-lg shadow sm:p-8 dark:bg-gray-800">
+        <div class="w-full max-w-xl p-6 space-y-8 bg-white rounded-lg shadow-lg sm:p-8 dark:bg-gray-800">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
                 Daftar Akun
             </h2>
@@ -54,7 +56,7 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Daftar
+                    class="w-full px-5 py-2 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Daftar
                     Akun</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Sudah punya akun? <a href="{{ route('login') }}"

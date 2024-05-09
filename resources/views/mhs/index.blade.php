@@ -97,6 +97,64 @@
                 </div>
             </div>
         </div>
+        <div
+            class="p-4 mt-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+            <div class="w-full mb-5">
+                <div class="mb-4">
+
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Sistem Penyelenggaraan
+                        Kegiatan Kemahasiswaan Program Studio Diploma III dan Diploma IV</h1>
+                    <p class="text-gray-500 ">Ketentuan Angka Kredit Bedasarkan Jenis Kegiatan </p>
+                </div>
+                @foreach ($Ltypes as $ltype)
+                    <div class="p-2">
+                        <p class="mb-2 text-bold">{{ $loop->iteration }}. {{ $ltype->type }} - {{ $ltype->activity_name }}
+                        </p>
+                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
+                                <thead
+                                    class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 rounded-s-lg">
+                                            No
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Tingkat Kegiatan
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Angka Kredit
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Dasar Penilaian
+                                        </th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($ltype->detailLetterType as $dtype)
+                                        <tr class="bg-white dark:bg-gray-800">
+                                            <td class="px-6 py-4">{{ $loop->iteration }}</td>
+                                            <td class="px-6 py-4">{{ $dtype->activity_level }} -
+                                                {{ $dtype->sub_activity_level }}</td>
+                                            <td class="px-6 py-4">{{ $dtype->point }}</td>
+                                            <td class="px-6 py-4"></td>
+
+                                        </tr>
+                                    @endforeach
+
+
+                                </tbody>
+                            </table>
+                            <div class="relative overflow-x-auto">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+
+        </div>
 
     </div>
 @endsection

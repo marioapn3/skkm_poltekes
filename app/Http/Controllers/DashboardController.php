@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailLetterType;
+use App\Models\LetterType;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +14,9 @@ class DashboardController extends Controller
         $valid = auth()->user()->student->documents->where('status', 'Validasi')->count();
         $reject = auth()->user()->student->documents->where('status', 'Ditolak')->count();
         $pending = auth()->user()->student->documents->where('status', 'Menunggu')->count();
-        return view('mhs.index', compact('all', 'valid', 'reject', 'pending'));
+
+        $Ltypes = LetterType::all();
+        return view('mhs.index', compact('all', 'valid', 'reject', 'pending', 'Ltypes'));
     }
 
     public function dsnDashboard()

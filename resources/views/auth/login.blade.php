@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign In</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo_kemenkes_favicon.png') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -14,7 +16,7 @@
         <a href="" class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
             <img src="{{ asset('assets/logo_kemenkes.png') }}" class="mr-4 h-11" alt="FlowBite Logo">
         </a>
-        <div class="w-full max-w-xl p-6 space-y-8 bg-white rounded-lg shadow sm:p-8 dark:bg-gray-800">
+        <div class="w-full max-w-xl p-6 space-y-8 bg-white rounded-lg shadow-lg sm:p-8 dark:bg-gray-800">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
                 Login ke SIREKAM
             </h2>

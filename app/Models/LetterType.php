@@ -9,4 +9,9 @@ class LetterType extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function detailLetterType()
+    {
+        return $this->hasMany(DetailLetterType::class);
+    }
 }

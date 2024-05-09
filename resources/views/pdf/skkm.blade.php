@@ -7,24 +7,125 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .rotate-90 {
-            writing-mode: vertical-lr;
+        .container-footer table {
+            border-collapse: collapse;
+            width: 100%;
+            padding: 10px;
+            margin-top: 150px
         }
 
-        table,
-        th,
-        td {
+        .mt-atas {
+            height: 50px;
+        }
+
+        .tanda-tangan {
+            height: 120px;
+        }
+
+        .footer-kiri {
+            width: 400px;
+
+        }
+
+        .footer-kanan {
+            width: 400px
+        }
+
+        .container-footer th,
+        .container-footer td {
+            /* border: 1px solid black; */
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .container table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .container th,
+        .container td {
             border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .rotate {
+            transform: rotate(-90deg);
+        }
+
+        body {
+            font-size: 11px;
+            /* times new roman */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container-title {
+
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container-title p {
+            /* font-size: 20px; */
+            font-weight: bold;
+            /* give underline */
+        }
+
+        .table-profile {
+            margin-bottom: 20px;
+            margin-left: 20px
+        }
+
+        .container-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            /* Jarak antara kolom */
+            margin-top: 50px;
+        }
+
+        .container-bottom div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-bottom p {
+            margin: 0;
+        }
+
+        .container-bottom p.signature {
+            border-bottom: 1px solid black;
+            width: 80%;
+            /* Lebar tanda tangan */
+            margin-top: 20px;
+        }
+
+        .container-bottom p.date {
+            margin-top: 40px;
+        }
+
+        .container-bottom p.signature::after {
+            content: ".............................................";
+        }
+
+        .container-bottom p.signature span {
+            margin-left: 150px;
+            /* Jarak antara nama dan tanda tangan */
         }
     </style>
 </head>
 
 <body>
-    <p>Form SKKM</p>
-    <p>NILAI SEMESTER</p>
-    <p>Satuan Kredit Mahasiswa</p>
+    <div class="container-title">
+        <p style="text-decoration: underline;">Form SKKM</p>
+        <p>NILAI SEMESTER</p>
+        <p>Satuan Kredit Mahasiswa</p>
 
-    <table style="">
+    </div>
+
+    <table class="table-profile">
+
         <tr>
             <td>Nama</td>
             <td>:</td>
@@ -46,52 +147,115 @@
             <td>{{ Auth::user()->student->semester }}</td>
         </tr>
     </table>
-
-    <table style="width: 100%; ">
-        <thead style="">
-            <tr>
-                <th rowspan="3">NO</th>
-                <th rowspan="3"> Jenis Kegiatan</th>
-                <th colspan="16">Jenis SKKM</th>
-            </tr>
-            <tr>
-                <th colspan="4">Kegiatan Wajib</th>
-                <th colspan="12">Kegiatan Pilihan</th>
-            </tr>
-            <tr>
-                @foreach ($lts as $item)
-                    <th class="rotate-90" style="height: 200px">{{ $item->activity_name }}</th>
-                @endforeach
-                <th class="rotate-90">Bukti Fisik</th>
-                <th class="rotate-90">Angka Kredit</th>
-                <th class="rotate-90">TTD dan atau verifikasi</th>
-            </tr>
-        </thead>
-        <tbody class="">
-            @foreach ($documents as $dc)
+    <div class="container">
+        <table style="width: 100%; ">
+            <thead style="">
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $dc->name }}</td>
-                    @foreach ($lts as $lt)
-                        <td>
-                            @if ($dc->detailLetterType->letterType->id == $lt->id)
-                                Bener
-                            @endif
-                        </td>
-                    @endforeach
-                    <td>Sertifikat Nomor{{ $dc->no }}</td>
-                    <td>{{ $dc->detailLetterType->point }}</td>
-                    <td>Centang</td>
+                    <th rowspan="3">NO</th>
+                    <th rowspan="3"> Jenis Kegiatan</th>
+                    <th colspan="16">Jenis SKKM</th>
                 </tr>
-            @endforeach
-            <tr>
-                <td colspan="2">Jumlah Angka Kredit : </td>
-                <td colspan="14"></td>
-                <td colspan="">{{ $point }}</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+                <tr>
+                    <th colspan="4">Kegiatan Wajib</th>
+                    <th colspan="12">Kegiatan Pilihan</th>
+                </tr>
+                <tr>
+                    @foreach ($lts as $item)
+                        <th class="rotate" style="height: 200px">{{ $item->activity_name }}</th>
+                    @endforeach
+                    <th class="rotate">Bukti Fisik</th>
+                    <th class="rotate">Angka Kredit</th>
+                    <th class="rotate">TTD dan atau verifikasi</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                @foreach ($documents as $dc)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $dc->name }}</td>
+                        @foreach ($lts as $lt)
+                            <td>
+                                @if ($dc->detailLetterType->letterType->id == $lt->id)
+                                    √
+                                @endif
+                            </td>
+                        @endforeach
+                        <td>Sertifikat Nomor {{ $dc->no }}</td>
+                        <td>{{ $dc->detailLetterType->point }}</td>
+                        <td>√</td>
+                    </tr>
+                @endforeach
+                <tr>
+                    <td colspan="2">Jumlah Angka Kredit : </td>
+                    <td colspan="14"></td>
+                    <td colspan="">{{ $point }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container-footer">
+        <table>
+            <tbody>
+                <tr class="mt-atas">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="footer-kiri"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="footer-kanan">Yogyakarta, @php
+                        $date = date('d F Y');
+                        echo $date;
+                    @endphp</td>
+                </tr>
+                <tr>
+                    <td>Mengetahui / Menyetujui</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Dosen Pembimbing Akademik</td>
+                </tr>
+                <tr class="">
+                    <td class="tanda-tangan"> </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Dr Catur Budi Susilo, S.Pd, S.Kp, M.Kes
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Nurun Laasara, S.Kep.Ns, M.Kep</td>
+                </tr>
+                <tr>
+                    <td>NIP : </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>NIP :</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+
 </body>
 
 </html>

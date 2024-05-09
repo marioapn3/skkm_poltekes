@@ -41,10 +41,10 @@ class LetterTypeSeeder extends Seeder
             ],
             [
                 'type' => 'Kegiatan Pilihan',
-                'activity_name' => 'Kejuaraan/kompetensi/Perlombaan',
+                'activity_name' => 'Kejuaraan / kompetensi / Perlombaan',
             ], [
                 'type' => 'Kegiatan Pilihan',
-                'activity_name' => 'Penelitian, Pengabdian Masyarakat, Seminar,Kuliah Tamu dan Kegiatan Ilmiah Lainnya',
+                'activity_name' => 'Penelitian, Pengabdian Masyarakat, Seminar, Kuliah Tamu dan Kegiatan Ilmiah Lainnya',
             ], [
                 'type' => 'Kegiatan Pilihan',
                 'activity_name' => 'Penghargaan Akademik dan Non Akademik',

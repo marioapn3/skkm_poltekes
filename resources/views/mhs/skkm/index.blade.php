@@ -232,7 +232,7 @@
                                             class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300 border border-red-300">Ditolak</span>
                                     @endif
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="flex gap-1 px-6 py-4">
                                     <a href="{{ route('mhs.skkm.edit', $document) }}">
                                         <button class="p-2 text-white bg-green-500 rounded-xl">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
