@@ -183,7 +183,7 @@
             </div>
             <div class="flex flex-col gap-10">
                 <a href="" class="relative lg:relative lg:pl-80 lg:pr-20" data-aos="fade-right"
-                    data-aos-duration="1200" data-aos-delay="200">
+                    data-aos-duration="1000" data-aos-delay="200">
                     <div class="w-full lg:absolute xl:left-[-25%] lg:top-[3%] lg:left-[-24%] left-0 top-0">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -211,7 +211,7 @@
                     </div>
                 </a>
                 <a href="" class="relative mt-32 lg:relative lg:pr-80 lg:pl-20 lg:mt-0" data-aos="fade-left"
-                    data-aos-duration="1200" data-aos-delay="200">
+                    data-aos-duration="1000" data-aos-delay="200">
                     <div class="w-full absolute xl:top-[5%] xl:left-[25%] lg:top-[15%] lg:left-[24%] mx-auto">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -238,7 +238,7 @@
                     </div>
                 </a>
                 <a href="" class="relative lg:relative lg:pl-80 lg:pr-20" data-aos="fade-right"
-                    data-aos-duration="1200" data-aos-delay="200">>
+                    data-aos-duration="1000" data-aos-delay="200">>
                     <div class="w-full lg:absolute xl:left-[-25%] lg:top-[3%] lg:left-[-24%] left-0 top-0">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -274,11 +274,14 @@
     <!-- Start block -->
     <section id="faq" class="mt-20 bg-white ">
         <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
-            <h2 data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200"
-                class="mb-6 text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] text-center text-gray-900 lg:mb-8  ">
-                Frequently asked questions</h2>
-
-            <div class="max-w-screen-md mx-auto" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200">
+            <h2 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200"
+                class=" text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] text-center text-gray-900 mb-4  ">
+                Frequently Asked Questions</h2>
+            <p class="text-lg text-center text-body-color dark:text-dark-6 text-gray-500 mb-6" data-aos="fade-down"
+                data-aos-duration="1000" data-aos-delay="200">
+                Cek Fitur Sirekam yang Bikin Pengelolaan SKKM Jadi Lebih Terstruktur!
+            </p>
+            <div class="max-w-screen-md mx-auto" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                 <ul class="flex flex-col gap-5 text-xl">
                     <li class="my-2 bg-white rounded-lg shadow-lg" x-data="accordion(1)">
                         <h2 @click="handleClick()"

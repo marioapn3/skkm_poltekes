@@ -14,7 +14,8 @@
 <body>
 
     <div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
-        <a href="" class="flex items-center justify-center mb-5 text-2xl font-semibold lg:mb-8 dark:text-white">
+        <a href="{{ url('/') }}"
+            class="flex items-center justify-center mb-5 text-2xl font-semibold lg:mb-8 dark:text-white">
             <img src="{{ asset('assets/logo_kemenkes.png') }}" class="mr-4 h-11" alt="FlowBite Logo">
         </a>
         <!-- Card -->
