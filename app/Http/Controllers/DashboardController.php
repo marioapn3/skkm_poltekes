@@ -21,6 +21,18 @@ class DashboardController extends Controller
 
     public function dsnDashboard()
     {
-        return view("dosen.index");
+        $all = auth()->user()->lecture->students->flatMap->documents->count();
+        $valid = auth()->user()->lecture->students->flatMap->documents->where('status', 'Validasi')->count();
+        $pending = auth()->user()->lecture->students->flatMap->documents->where('status', 'Menunggu')->count();
+        $allStudents = auth()->user()->lecture->students->count();
+        $data = [
+            'all' => $all,
+            'valid' => $valid,
+            'pending' => $pending,
+            'allStudents' => $allStudents
+        ];
+        // return view('dsn.index', compact('data'));
+
+        return view("dosen.index", $data);
     }
 }

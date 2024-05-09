@@ -33,7 +33,7 @@
                             </path>
                         </svg>
                     </button>
-                    <a href="https://flowbite.com" class="flex ms-2 md:me-24">
+                    <a href="{{ url('/') }}" class="flex ms-2 md:me-24">
                         <img src="{{ asset('assets/logo_kemenkes.png') }}" class="h-8 me-3" alt="FlowBite Logo" />
 
                     </a>
@@ -45,8 +45,7 @@
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="w-8 h-8 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                <img class="w-8 h-8 rounded-full" src="{{ asset('assets/profile-logo.jpeg') }}"
                                     alt="user photo">
                             </button>
                         </div>
@@ -89,6 +88,12 @@
     <div class="p-4 sm:ml-64">
         <div class= "mt-10">
             @yield('content')
+        </div>
+        <div class="text-center my-5 ">
+            <hr class="">
+            <span class="block p-5 text-sm text-center ">© 2024 Kemenkes Poltekes Yogyakarta™. All
+                Rights Reserved. Built with Love
+            </span>
         </div>
     </div>
     @yield('script')

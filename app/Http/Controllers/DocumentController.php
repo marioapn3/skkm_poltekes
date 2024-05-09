@@ -14,7 +14,7 @@ class DocumentController extends Controller
     public function index()
     {
         $detailLetterTypes = DetailLetterType::all();
-        $documents = Document::where('student_id', auth()->user()->student->id)->paginate(10);
+        $documents = Document::where('student_id', auth()->user()->student->id)->paginate(5);
         return view('mhs.skkm.index', compact('detailLetterTypes', 'documents'));
     }
 
@@ -27,7 +27,7 @@ class DocumentController extends Controller
             ->where(function ($q) use ($query) {
                 $q->where('name', 'like', "%$query%");
             })
-            ->paginate(10);
+            ->paginate(5);
         return view('mhs.skkm.index', compact('detailLetterTypes', 'documents'));
     }
 
@@ -140,7 +140,7 @@ class DocumentController extends Controller
             ->where(function ($q) use ($query) {
                 $q->where('name', 'like', "%$query%");
             })
-            ->paginate(10);
+            ->paginate(5);
         $dcms = Document::where('student_id', auth()->user()->student->id)->where('status', 'Validasi')->get();
         $point = 0;
         foreach ($dcms as $document) {
@@ -158,7 +158,7 @@ class DocumentController extends Controller
     {
         $documents = Document::whereHas('student', function ($query) {
             $query->where('lecture_id', auth()->user()->lecture->id);
-        })->paginate(10);
+        })->paginate(5);
         return view('dosen.skkm.index', compact('documents'));
     }
 

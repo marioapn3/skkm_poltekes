@@ -54,11 +54,22 @@
                     {{-- <span class="self-center text-xl font-semibold whitespace-nowrap ">SIREKAM</span> --}}
                 </a>
                 <div class="flex items-center lg:order-2">
+                    {{-- Jika suidah login maka buttonya button dashvboard --}}
+                    @if (auth()->check())
+                        @php
+                            $user = auth()->user();
+                            $dashboardRoute = $user->role == 1 ? 'mhs.dashboard' : 'dsn.dashboard';
+                        @endphp
+                        <a href="{{ route($dashboardRoute) }}"
+                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}"
+                            class="rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Masuk</a>
+                        <a href="{{ route('register') }}"
+                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Daftar</a>
+                    @endif
 
-                    <a href="{{ route('login') }}"
-                        class="rounded-lg border border-gray-200 text-gray-800  hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Masuk</a>
-                    <a href="{{ route('register') }}"
-                        class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Daftar</a>
+
                     <button data-collapse-toggle="mobile-menu-2" type="button"
                         class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-controls="mobile-menu-2" aria-expanded="false">
@@ -128,15 +139,23 @@
                     Kegiatan Mahasiswa Poltekes Yogyakarta</p>
                 <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 " data-aos="fade-up" data-aos-duration="800"
                     data-aos-delay="200">
-                    <a href="{{ route('login') }}"
-                        class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    @php
+                        $dashboardRoute = auth()->check()
+                            ? ($user->role == 1
+                                ? 'mhs.dashboard'
+                                : 'dsn.dashboard')
+                            : 'login';
+                    @endphp
+
+                    <a href="{{ route($dashboardRoute) }}"
+                        class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Mulai Sekarang
                     </a>
-                    <a href="{{ route('register') }}"
+                    <a href="{{ route($dashboardRoute) }}"
                         class="inline-flex items-center justify-center text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">
-
                         Daftar Sekarang
                     </a>
+
                 </div>
             </div>
             <div class="hidden mx-auto ml-auto lg:mt-0 lg:col-span-5 lg:flex" data-aos="fade-left"

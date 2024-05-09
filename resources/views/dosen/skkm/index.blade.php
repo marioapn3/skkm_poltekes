@@ -38,13 +38,13 @@
                     <div class="flex items-center mb-4 sm:mb-0">
                         <form class="flex gap-2 sm:pr-3 " action="#" method="GET">
                             <label for="products-search" class="sr-only">Search</label>
-                            <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+                            <div class="relative w-48  sm:w-64 xl:w-96">
                                 <input type="text" name="email" id="products-search"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Cari SKKM">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-500"
                                 type="button">
                                 Cari
                             </button>
@@ -156,8 +156,7 @@
                 </div>
                 <div class="flex items-center space-x-3">
                     @if ($documents->previousPageUrl())
-                        <a href="{{ $documents->previousPageUrl() }}"
-                            class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <a href="{{ $documents->previousPageUrl() }}" class="flex items-center justify-between">
                             <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -169,8 +168,7 @@
                     @endif
 
                     @if ($documents->nextPageUrl())
-                        <a href="{{ $documents->nextPageUrl() }}"
-                            class="inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                        <a href="{{ $documents->nextPageUrl() }}" class="flex items-center justify-between">
                             Next
                             <svg class="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
