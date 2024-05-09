@@ -44,18 +44,19 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script> --}}
 </head>
 
-<body class="font-poppins">
+<body class="font-quicksand">
     <header class="fixed z-50 w-full">
-        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900 ">
-            <div class="flex flex-wrap items-center justify-between max-w-screen-lg px-4 mx-auto">
+        <nav class="bg-white border-gray-200 py-2.5  ">
+            <div
+                class="flex flex-wrap items-center justify-between px-5 sm:px-10 md:px-15  lg:max-w-screen-xl    mx-auto">
                 <a href="#" class="flex items-center">
                     <img src="{{ asset('assets/logo_kemenkes.png') }}" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-                    {{-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">SIREKAM</span> --}}
+                    {{-- <span class="self-center text-xl font-semibold whitespace-nowrap ">SIREKAM</span> --}}
                 </a>
                 <div class="flex items-center lg:order-2">
 
                     <a href="{{ route('login') }}"
-                        class="rounded-lg border border-gray-200 text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Masuk</a>
+                        class="rounded-lg border border-gray-200 text-gray-800  hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Masuk</a>
                     <a href="{{ route('register') }}"
                         class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Daftar</a>
                     <button data-collapse-toggle="mobile-menu-2" type="button"
@@ -105,13 +106,21 @@
 
 
     <!-- Start block -->
-    <section class="bg-white dark:bg-gray-900" id="home">
+    <section class="bg-white b" id="home">
         <div
-            class="grid items-center justify-between max-w-screen-lg px-4 pt-20 pb-8 mx-auto md:mb-10 lg:gap-8 xl:gap-2 lg:py-16 lg:grid-cols-12 lg:pt-36">
+            class="grid items-center justify-between max-w-screen-xl  px-5 sm:px-10 md:px-15 pt-20 pb-8 mx-auto md:mb-10 lg:gap-8 xl:gap-2 lg:py-16 lg:grid-cols-12 lg:pt-36">
             <div class="mr-auto place-self-center lg:col-span-7">
+                {{-- <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
+                    class="max-w-2xl mb-4 text-3xl  leading-none tracking-tight md:text-4xl xl:text-5xl  drop-shadow-2xl shadow-teal-400  font-extrabold   ">
+                    SIREKAM <br>
+                </h1> --}}
                 <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
-                    class="max-w-2xl mb-4 text-3xl font-bold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white ">
-                    SIREKAM - Sistem Aplikasi Perekapan dan Pengelolaan Dokumen Satuan Kredit Kegiatan Mahasiswa <br>
+                    class="max-w-2xl md:mt-10 mb-4 text-3xl  leading-none tracking-wider md:text-4xl xl:text-5xl  font-extrabold text-teal-400 ">
+                    SIREKAM</h1>
+                <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
+                    class="max-w-2xl mb-4 text-xl font-bold leading-none tracking-tight md:text-2xl xl:text-3xl  ">
+                    Aplikasi Perekapan dan Pengelolaan Dokumen Satuan Kredit Kegiatan Mahasiswa
+
                 </h1>
                 <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
                     class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
@@ -120,7 +129,7 @@
                 <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 " data-aos="fade-up" data-aos-duration="800"
                     data-aos-delay="200">
                     <a href="{{ route('login') }}"
-                        class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Mulai Sekarang
                     </a>
                     <a href="{{ route('register') }}"
@@ -145,11 +154,10 @@
         <div class="">
             <div class="w-full px-4" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
                 <div class="mx-auto mb-12 max-w-[700px] text-center lg:mb-[70px]">
-                    <h2
-                        class="text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                    <h2 class="text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] ">
                         Fitur Utama
                     </h2>
-                    <p class="text-lg text-body-color dark:text-dark-6">
+                    <p class="text-lg text-body-color dark:text-dark-6 text-gray-500">
                         Cek Fitur Sirekam yang Bikin Pengelolaan SKKM Jadi Lebih Terstruktur!
                     </p>
                 </div>
@@ -184,7 +192,7 @@
                     </div>
                 </a>
                 <a href="" class="relative mt-32 lg:relative lg:pr-80 lg:pl-20 lg:mt-0" data-aos="fade-left"
-                    data-aos-duration="1200" data-aos-delay="200">>
+                    data-aos-duration="1200" data-aos-delay="200">
                     <div class="w-full absolute xl:top-[5%] xl:left-[25%] lg:top-[15%] lg:left-[24%] mx-auto">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -245,10 +253,10 @@
 
 
     <!-- Start block -->
-    <section id="faq" class="mt-20 bg-white dark:bg-gray-900">
-        <div class="max-w-screen-lg px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
+    <section id="faq" class="mt-20 bg-white ">
+        <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
             <h2 data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200"
-                class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white">
+                class="mb-6 text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] text-center text-gray-900 lg:mb-8  ">
                 Frequently asked questions</h2>
 
             <div class="max-w-screen-md mx-auto" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200">
@@ -266,7 +274,7 @@
                             </svg>
                         </h2>
                         <div x-ref="tab" :style="handleToggle()"
-                            class="overflow-hidden transition-all duration-500 border-l-2 border-teal-500 max-h-0">
+                            class="overflow-hidden transition-all duration-500 border-l-[3px] border-teal-500 max-h-0">
                             <p class="p-5 text-gray-900">
                                 SKKM adalah ukuran aktivitas ekstrakurikuler, intrakurikuler, dan lainnya yang dilakukan
                                 oleh mahasiswa di perguruan tinggi sebagai bagian dari Tridharma Perguruan Tinggi.
@@ -285,7 +293,7 @@
                                 </path>
                             </svg>
                         </h2>
-                        <div class="overflow-hidden transition-all duration-500 border-l-2 border-teal-500 max-h-0"
+                        <div class="overflow-hidden transition-all duration-500 border-l-[3px] border-teal-500 max-h-0"
                             x-ref="tab" :style="handleToggle()">
                             <p class="p-5 text-gray-900">
                                 Transcript Form SKKM adalah dokumen resmi yang merekam dan menyajikan seluruh kegiatan
@@ -306,7 +314,7 @@
                                 </path>
                             </svg>
                         </h2>
-                        <div class="overflow-hidden transition-all duration-500 border-l-2 border-teal-500 max-h-0"
+                        <div class="overflow-hidden transition-all duration-500 border-l-[3px] border-teal-500 max-h-0"
                             x-ref="tab" :style="handleToggle()">
                             <p class="p-5 text-gray-900">
                                 Proses validasi dokumen SKKM oleh Dosen Pembimbing melibatkan peninjauan dan penilaian
@@ -329,7 +337,7 @@
                                 </path>
                             </svg>
                         </h2>
-                        <div class="overflow-hidden transition-all duration-500 border-l-2 border-teal-500 max-h-0"
+                        <div class="overflow-hidden transition-all duration-500 border-l-[3px] border-teal-500 max-h-0"
                             x-ref="tab" :style="handleToggle()">
                             <p class="p-5 text-gray-900">
                                 Kegiatan yang dapat memberikan nilai Angka Kredit meliputi kegiatan di bidang organisasi
@@ -350,7 +358,7 @@
                                 </path>
                             </svg>
                         </h2>
-                        <div class="overflow-hidden transition-all duration-500 border-l-2 border-teal-500 max-h-0"
+                        <div class="overflow-hidden transition-all duration-500 border-l-[3px] border-teal-500 max-h-0"
                             x-ref="tab" :style="handleToggle()">
                             <p class="p-5 text-gray-900">
                                 Seluruh angka kredit kegiatan mahasiswa yang dihitung berdasarkan ketentuan yang telah
@@ -367,12 +375,12 @@
     </section>
     <!-- End block -->
     <footer id="contact" class="pt-4 bg-teal-400 pt-md-5">
-        <div class="max-w-screen-lg mx-auto">
+        <div class="max-w-screen-xl mx-auto">
             <div class="grid grid-cols-1 gap-4 gap-5 px-10 py-20 sm:grid-cols-2 md:grid-cols-3 md:px-10 lg:px-0">
                 <div class="col-span-1 md:col-span-1">
                     <div class="">
                         {{-- <div class="bg-white rounded-lg"> --}}
-                        <img src="{{ asset('assets/logo_kemenkes.png') }}" width="160" class="p-2 bg-white"
+                        <img src="{{ asset('assets/logo_kemenkes.png') }}" width="160" class="p-2 bg-white mb-2"
                             alt="">
                         {{-- </div> --}}
 

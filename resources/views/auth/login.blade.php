@@ -38,7 +38,7 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login</button>
+                    class="w-full px-5 py-2 text-base font-medium text-center text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 sm:w-auto dark:bg-teal-300 dark:hover:bg-teal-400 dark:focus:ring-teal-500">Login</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Belum punya akun? <a href="{{ route('register') }}"
                         class="text-primary-700 hover:underline dark:text-primary-500">Daftar Sekarang</a>

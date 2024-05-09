@@ -11,7 +11,7 @@
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
                                 <a href="{{ route('mhs.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                                    class="inline-flex items-center text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-white">
 
                                     Dashboard
                                 </a>
@@ -38,13 +38,13 @@
                     <div class="flex items-center mb-4 sm:mb-0">
                         <form class="flex gap-2 sm:pr-3 " action="{{ route('mhs.skkm.transcript.search') }}" method="GET">
                             <label for="products-search" class="sr-only">Search</label>
-                            <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+                            <div class="relative w-48  sm:w-64 xl:w-96">
                                 <input type="text" name="query" id="products-search" value="{{ request('query') }}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                     placeholder="Cari SKKM">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-500"
                                 type="submit">
                                 Cari
                             </button>
@@ -53,8 +53,8 @@
                     </div>
                     <div class="items-center sm:flex">
 
-                        <a href="{{ route('pdf.download') }}"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        <a href="{{ route('pdf.download') }}" target="_blank"
+                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-teal-300 dark:hover:bg-teal-400 dark:focus:ring-teal-500"
                             type="button">Transcript SKKM </a>
 
                         {{-- <!-- Dropdown menu -->
