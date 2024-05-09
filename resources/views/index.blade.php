@@ -10,6 +10,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Meta SEO -->
     {{-- <meta name="title" content="Landwind - Tailwind CSS Landing Page">
     <meta name="description"
@@ -43,8 +45,8 @@
 </head>
 
 <body class="font-poppins">
-    <header class="fixed w-full">
-        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+    <header class="fixed z-50 w-full">
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900 ">
             <div class="flex flex-wrap items-center justify-between max-w-screen-lg px-4 mx-auto">
                 <a href="#" class="flex items-center">
                     <img src="{{ asset('assets/logo_kemenkes.png') }}" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
@@ -107,14 +109,16 @@
         <div
             class="grid items-center justify-between max-w-screen-lg px-4 pt-20 pb-8 mx-auto md:mb-10 lg:gap-8 xl:gap-2 lg:py-16 lg:grid-cols-12 lg:pt-36">
             <div class="mr-auto place-self-center lg:col-span-7">
-                <h1
-                    class="max-w-2xl mb-4 text-3xl font-bold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white">
+                <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
+                    class="max-w-2xl mb-4 text-3xl font-bold leading-none tracking-tight md:text-4xl xl:text-5xl dark:text-white ">
                     SIREKAM - Sistem Aplikasi Perekapan dan Pengelolaan Dokumen Satuan Kredit Kegiatan Mahasiswa <br>
                 </h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
+                    class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                     Sirekam dikembangkan untuk mempermudah sistem perekapan dan perhitungan dokumen Satuan Kredit
                     Kegiatan Mahasiswa Poltekes Yogyakarta</p>
-                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4 " data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="200">
                     <a href="{{ route('login') }}"
                         class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Mulai Sekarang
@@ -126,7 +130,8 @@
                     </a>
                 </div>
             </div>
-            <div class="hidden mx-auto ml-auto lg:mt-0 lg:col-span-5 lg:flex">
+            <div class="hidden mx-auto ml-auto lg:mt-0 lg:col-span-5 lg:flex" data-aos="fade-left"
+                data-aos-duration="800" data-aos-delay="200">
                 {{-- <img class=" rounded-xl size-72 md:size-80" src="{{ asset('assets/hero-img-v2.png') }}" --}}
                 <img class=" rounded-xl size-72 md:size-80" src="{{ asset('assets/hero-img.png') }}" alt="hero image">
             </div>
@@ -138,7 +143,7 @@
     <!-- ====== Features Section Start -->
     <section id="fitur" class="max-w-screen-xl py-20 mx-auto overflow-hidden dark:bg-dark">
         <div class="">
-            <div class="w-full px-4">
+            <div class="w-full px-4" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
                 <div class="mx-auto mb-12 max-w-[700px] text-center lg:mb-[70px]">
                     <h2
                         class="text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
@@ -150,7 +155,8 @@
                 </div>
             </div>
             <div class="flex flex-col gap-10">
-                <a href="" class="relative lg:relative lg:pl-80 lg:pr-20">
+                <a href="" class="relative lg:relative lg:pl-80 lg:pr-20" data-aos="fade-right"
+                    data-aos-duration="1200" data-aos-delay="200">
                     <div class="w-full lg:absolute xl:left-[-25%] lg:top-[3%] lg:left-[-24%] left-0 top-0">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -177,7 +183,8 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="relative mt-32 lg:relative lg:pr-80 lg:pl-20 lg:mt-0">
+                <a href="" class="relative mt-32 lg:relative lg:pr-80 lg:pl-20 lg:mt-0" data-aos="fade-left"
+                    data-aos-duration="1200" data-aos-delay="200">>
                     <div class="w-full absolute xl:top-[5%] xl:left-[25%] lg:top-[15%] lg:left-[24%] mx-auto">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -203,7 +210,8 @@
                         </div>
                     </div>
                 </a>
-                <a href="" class="relative lg:relative lg:pl-80 lg:pr-20">
+                <a href="" class="relative lg:relative lg:pl-80 lg:pr-20" data-aos="fade-right"
+                    data-aos-duration="1200" data-aos-delay="200">>
                     <div class="w-full lg:absolute xl:left-[-25%] lg:top-[3%] lg:left-[-24%] left-0 top-0">
                         <div class="wow fadeInUp group" data-wow-delay=".1s">
                             <div
@@ -239,105 +247,11 @@
     <!-- Start block -->
     <section id="faq" class="mt-20 bg-white dark:bg-gray-900">
         <div class="max-w-screen-lg px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
-            <h2
+            <h2 data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200"
                 class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white">
                 Frequently asked questions</h2>
-            {{-- <div class="max-w-screen-md mx-auto">
-                <div id="accordion-flush" data-accordion="collapse"
-                    data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-                    data-inactive-classes="text-gray-500 dark:text-gray-400">
-                    <h3 id="accordion-flush-heading-1">
-                        <button type="button"
-                            class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-900 bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
-                            data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
-                            aria-controls="accordion-flush-body-1">
-                            <span>Apa itu SKKM (Satuan Kredit Kegiatan Mahasiswa)?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </h3>
-                    <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">SKKM adalah ukuran aktivitas
-                                ekstrakurikuler, intrakurikuler, dan lainnya yang dilakukan oleh mahasiswa di perguruan
-                                tinggi sebagai bagian dari Tridharma Perguruan Tinggi.</p>
 
-                        </div>
-                    </div>
-                    <h3 id="accordion-flush-heading-2">
-                        <button type="button"
-                            class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                            data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
-                            aria-controls="accordion-flush-body-2">
-                            <span>Apa tujuan utama dari SKKM??</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </h3>
-                    <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Tujuan SKKM adalah untuk memacu,
-                                memberikan penghargaan, dan meningkatkan mutu mahasiswa serta lulusan dengan mengakui
-                                dan memperhitungkan partisipasi mereka di luar kegiatan akademik.</p>
-                        </div>
-                    </div>
-                    <h3 id="accordion-flush-heading-3">
-                        <button type="button"
-                            class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                            data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
-                            aria-controls="accordion-flush-body-3">
-                            <span>Bagaimana proses validasi dokumen SKKM oleh Dosen Pembimbing?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </h3>
-                    <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Proses validasi dokumen SKKM oleh Dosen
-                                Pembimbing melibatkan peninjauan dan penilaian dokumen-dokumen yang diajukan oleh
-                                mahasiswa sebagai bukti partisipasi mereka. Dosen pembimbing akan memverifikasi
-                                keabsahan, relevansi, dan kontribusi nyata dari setiap dokumen terhadap pencapaian SKKM.
-                            </p>
-
-                        </div>
-                    </div>
-                    <h3 id="accordion-flush-heading-4">
-                        <button type="button"
-                            class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                            data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
-                            aria-controls="accordion-flush-body-4">
-                            <span>Apa saja kegiatan yang dapat memberikan nilai Angka Kredit SKKM?</span>
-                            <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </h3>
-                    <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                            <p class="mb-2 text-gray-500 dark:text-gray-400">Kegiatan yang dapat memberikan nilai SKP
-                                meliputi kegiatan di bidang organisasi kepemimpinan, penalaran dan keilmuan, minat dan
-                                bakat, kepedulian sosial, serta kegiatan lainnya yang relevan dengan Tridharma Perguruan
-                                Tinggi.</p>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <div class="max-w-screen-md mx-auto">
+            <div class="max-w-screen-md mx-auto" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200">
                 <ul class="flex flex-col gap-5 text-xl">
                     <li class="my-2 bg-white rounded-lg shadow-lg" x-data="accordion(1)">
                         <h2 @click="handleClick()"
@@ -526,6 +440,10 @@
 
 
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.store('accordion', {
