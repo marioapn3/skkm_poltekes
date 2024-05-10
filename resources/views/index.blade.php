@@ -53,7 +53,7 @@
                     <img src="{{ asset('assets/logo_kemenkes.png') }}" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
                     {{-- <span class="self-center text-xl font-semibold whitespace-nowrap ">SIREKAM</span> --}}
                 </a>
-                <div class="flex items-center lg:order-2">
+                <div class="flex items-center gap-2 lg:order-2">
                     {{-- Jika suidah login maka buttonya button dashvboard --}}
                     @if (auth()->check())
                         @php
@@ -148,7 +148,7 @@
                     @endphp
 
                     <a href="{{ route($dashboardRoute) }}"
-                        class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        class="inline-flex items-center justify-center px-5 py-2 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Mulai Sekarang
                     </a>
                     <a href="{{ route($dashboardRoute) }}"

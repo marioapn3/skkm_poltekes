@@ -154,7 +154,7 @@
                 });
                 Toast.fire({
                     icon: "error",
-                    title: "{{ session('error') }}"
+                    title: "{{ $error }}"
                 });
             </script>
         @endforeach
