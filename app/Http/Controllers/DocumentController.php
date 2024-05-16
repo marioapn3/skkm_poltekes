@@ -50,7 +50,7 @@ class DocumentController extends Controller
 
             $file = $request->file('file');
             $originalFilename = $file->getClientOriginalName();
-            $path = $file->storeAs('public/skkm/', $originalFilename);
+            $path = $file->storeAs('public/skkm', $originalFilename);
             $fileName = 'storage/' . str_replace('public/', '', $path);
             Document::create([
                 'name' => $request->name,
@@ -85,7 +85,7 @@ class DocumentController extends Controller
             if ($request->file('file') != null) {
                 $file = $request->file('file');
                 $originalFilename = $file->getClientOriginalName();
-                $path = $file->storeAs('public/skkm/', $originalFilename);
+                $path = $file->storeAs('public/skkm', $originalFilename);
                 $fileName = 'storage/' . str_replace('public/', '', $path);
             }
             $document = Document::find($request->document_id);

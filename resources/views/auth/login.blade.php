@@ -11,35 +11,33 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="font-quicksand">
     <div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
-        <a href="{{ url('/') }}"
-            class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 dark:text-white">
+        <a href="{{ url('/') }}" class="flex items-center justify-center mb-8 text-2xl font-semibold lg:mb-10 ">
             <img src="{{ asset('assets/logo_kemenkes.png') }}" class="mr-4 h-11" alt="FlowBite Logo">
         </a>
         <div class="w-full max-w-xl p-6 space-y-8 bg-white rounded-lg shadow-lg sm:p-8 dark:bg-gray-800">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-                Login ke SIREKAM
+            <h2 class="text-2xl font-bold text-gray-900 ">
+                Login ke <span class="text-teal-400 ">SIREKAM</span>
             </h2>
             <form class="mt-8 space-y-6" action="{{ route('auth.login') }}" method="post">
                 @csrf
                 <div>
-                    <label for="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
                     <input type="email" name="email" id="email"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Masukan email anda" required>
                 </div>
                 <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Password</label>
                     <input type="password" name="password" id="password" placeholder="Masukan Password"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         required>
                 </div>
 
                 <button type="submit"
-                    class="w-full px-5 py-2 text-base font-medium text-center text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 sm:w-auto dark:bg-teal-300 dark:hover:bg-teal-400 dark:focus:ring-teal-500">Login</button>
+                    class="w-full px-5 py-2 text-base font-medium text-center text-white bg-teal-400 rounded-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 sm:w-auto dark:bg-teal-300 dark:focus:ring-teal-500">Login</button>
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Belum punya akun? <a href="{{ route('register') }}"
                         class="text-primary-700 hover:underline dark:text-primary-500">Daftar Sekarang</a>

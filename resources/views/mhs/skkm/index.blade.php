@@ -18,7 +18,7 @@
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
                                 <a href="{{ route('mhs.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-teal-600 dark:text-gray-300 dark:hover:text-white">
+                                    class="inline-flex items-center text-gray-700 hover:text-teal-600  ">
 
                                     Dashboard
                                 </a>
@@ -31,13 +31,13 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd"></path>
                                     </svg>
-                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500" aria-current="page">Rekap
+                                    <span class="ml-1 text-gray-400 md:ml-2 " aria-current="page">Rekap
                                         SKKM</span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Rekap SKKM</h1>
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl ">Rekap SKKM</h1>
                     <p class="text-gray-500 ">Rekap Dokumen SKKM anda disini. SKKM merupakan Satuan Kredit Kegiatan
                         Mahasiswa. </p>
                 </div>
@@ -47,11 +47,11 @@
                             <label for="products-search" class="sr-only">Search</label>
                             <div class="relative w-48 sm:w-64 xl:w-96">
                                 <input type="text" name="query" id="products-search" value="{{ request('query') }}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                     placeholder="Cari SKKM">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-500"
+                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300  focus:outline-none dark:focus:ring-teal-500"
                                 type="submit">
                                 Cari
                             </button>
@@ -59,7 +59,7 @@
 
                     </div>
                     <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                        class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-teal-300 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-500"
+                        class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-teal-300  focus:outline-none dark:focus:ring-teal-500"
                         type="button">
                         Tambah SKKM
                     </button>
@@ -72,11 +72,11 @@
                                 <!-- Modal header -->
                                 <div
                                     class="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                    <h3 class="text-lg font-semibold text-gray-900 ">
                                         Input SKKM
                                     </h3>
                                     <button type="button"
-                                        class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 dark:hover:text-white"
+                                        class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 "
                                         data-modal-toggle="crud-modal">
                                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 14 14">
@@ -93,20 +93,19 @@
                                     @method('POST')
                                     <div class="grid grid-cols-2 gap-4 mb-4">
                                         <div class="col-span-2">
-                                            <label for="name"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
+                                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama
                                                 Kegiatan</label>
                                             <input type="text" name="name" id="name"
-                                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                                 placeholder="Nama kegiatan yang dilaksanakan" required="">
                                         </div>
                                         <div class="col-span-2">
                                             <label for="category"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis
+                                                class="block mb-2 text-sm font-medium text-gray-900 ">Jenis
                                                 SKKM</label>
 
                                             <select id="selectpicker" name="detail_letter_type_id"
-                                                class="selectpicker border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                                class="selectpicker border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                                 style="width: 100%" data-placeholder="Pilih Jenis SKKM"
                                                 data-allow-clear="false" title="Pilih Jenis SKKM">
                                                 <option value="">Pilih Jenis SKKM</option>
@@ -132,10 +131,10 @@
                                         </div>
                                         <div class="col-span-2">
                                             <label for="point"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Angka
+                                                class="block mb-2 text-sm font-medium text-gray-900 ">Angka
                                                 Kredit</label>
                                             <input type="text" name="point" id="point" disabled
-                                                class="border bg-gray-100 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                                class="border bg-gray-100 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                                 placeholder="0.5" required="">
                                         </div>
 
@@ -158,16 +157,16 @@
 
                                         <div class="col-span-2">
                                             <label for="no"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor
+                                                class="block mb-2 text-sm font-medium text-gray-900 ">Nomor
                                                 SKKM</label>
                                             <input type="text" name="no" id="no"
-                                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                                class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                                 placeholder="Nomor kegiatan yang dilaksanakan" required="">
                                         </div>
 
                                         <div class="col-span-2 ">
 
-                                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            <label class="block mb-2 text-sm font-medium text-gray-900 "
                                                 for="file">Upload file</label>
                                             <input
                                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -264,10 +263,9 @@
                 class="sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center mb-4 sm:mb-0">
                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                        Showing <span
-                            class="font-semibold text-gray-900 dark:text-white">{{ $documents->firstItem() }}</span>
-                        to <span class="font-semibold text-gray-900 dark:text-white">{{ $documents->lastItem() }}</span>
-                        of <span class="font-semibold text-gray-900 dark:text-white">{{ $documents->total() }}</span>
+                        Showing <span class="font-semibold text-gray-900 ">{{ $documents->firstItem() }}</span>
+                        to <span class="font-semibold text-gray-900 ">{{ $documents->lastItem() }}</span>
+                        of <span class="font-semibold text-gray-900 ">{{ $documents->total() }}</span>
                     </span>
                 </div>
                 <div class="flex items-center space-x-3">
@@ -305,7 +303,7 @@
         <div class="relative w-full max-w-md max-h-full p-4">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button"
-                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 "
                     data-modal-hide="delete-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
@@ -332,7 +330,7 @@
                             Ya, saya yakin
                         </button>
                         <button data-modal-hide="delete-modal" type="button"
-                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-teal-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-teal-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600  dark:hover:bg-gray-700">
                             Tidak</button>
                     </form>
 

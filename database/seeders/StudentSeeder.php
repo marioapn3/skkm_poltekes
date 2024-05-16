@@ -24,7 +24,7 @@ class StudentSeeder extends Seeder
         ]);
         $lecture_usr = User::create([
             'name' => 'Lecture',
-            'email' => 'letcture@gmail.com',
+            'email' => 'lecture@gmail.com',
             'role' => 2,
             'password' => Hash::make('password'),
         ]);
@@ -41,6 +41,13 @@ class StudentSeeder extends Seeder
             // 'nim' => '1234567890',
             // 'department' => 'Computer Science',
             // 'batch' => '2019',
+        ]);
+
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@poltekes.com',
+            'role' => 3,
+            'password' => Hash::make('password'),
         ]);
     }
 }

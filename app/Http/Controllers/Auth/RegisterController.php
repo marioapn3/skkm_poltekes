@@ -36,8 +36,10 @@ class RegisterController extends Controller
         Auth::login($user);
         if ($user->role == 1) {
             return redirect()->route('mhs.dashboard')->with('success', 'Register Berhasil');
-        } else {
+        } elseif ($user->role == 2) {
             return redirect()->route('dsn.dashboard')->with('success', 'Register Berhasil');
+        } else {
+            return redirect()->route('admin.dashboard')->with('success', 'Register Berhasil');
         }
     }
 

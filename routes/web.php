@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\PasswordController;
@@ -7,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\LectureController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +75,36 @@ Route::name('dsn.')->middleware('auth')->prefix('dosen/dashboard')->group(functi
         Route::post('skkm/validate', 'validateSKKM')->name('validate');
         Route::post('skkm/reject', 'rejectSKKM')->name('reject');
     });
+
+    Route::controller(LectureController::class)->group(function () {
+        Route::get('profile', 'index')->name('profile');
+        Route::post('profile', 'updateProfile')->name('profile.update');
+    });
 });
 
 Route::get('pdf', [PDFController::class, 'downloadPDF'])->name('pdf.download');
+
+
+Route::name('admin.')->middleware('auth')->prefix('admin/dashboard')->group(function () {
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/', 'index')->name('dashboard');
+    });
+    Route::controller(UserController::class)->prefix('users')->name('users.')->group(function () {
+        Route::prefix('mahasiswa')->name('mahasiswa.')->group(function () {
+            Route::get('/', 'mahasiswaIndex')->name('index');
+            Route::get('search', 'searchMahasiswa')->name('search');
+            Route::get('edit/{id}', 'editMahasiswa')->name('edit');
+            Route::post('update/{id}', 'updateMahasiswa')->name('update');
+        });
+        Route::prefix('dosen')->name('dosen.')->group(function () {
+            Route::get('/', 'dosenIndex')->name('index');
+            Route::get('search', 'searchDosen')->name('search');
+            Route::get('edit/{id}', 'editDosen')->name('edit');
+            Route::post('update/{id}', 'updateDosen')->name('update');
+        });
+        Route::put('updatePassword/{id}', 'updatePassword')->name('updatePassword');
+        Route::delete('delete', 'delete')->name('delete');
+    });
+
+    Route::resource('users', UserController::class);
+});

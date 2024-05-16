@@ -9,8 +9,7 @@
                     <nav class="flex mb-5" aria-label="Breadcrumb">
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
-                                <a href="#"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                                <a href="#" class="inline-flex items-center text-gray-700 hover:text-primary-600  ">
 
                                     Dashboard
                                 </a>
@@ -24,13 +23,13 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd"></path>
                                     </svg>
-                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500" aria-current="page">Validasi
+                                    <span class="ml-1 text-gray-400 md:ml-2 " aria-current="page">Validasi
                                         SKKM</span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Validasi Dokumen SKKM</h1>
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl ">Validasi Dokumen SKKM</h1>
                     <p class="text-gray-500 ">Silahkan periksa dokumen dan kesesuaian dengan jenis kegiatan, lalu validasi
                         dokumen jika memenuhi syarat dan sesuai.</p>
                 </div>
@@ -40,11 +39,11 @@
                             <label for="products-search" class="sr-only">Search</label>
                             <div class="relative w-48  sm:w-64 xl:w-96">
                                 <input type="text" name="email" id="products-search"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Cari SKKM">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-500"
+                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-600  focus:outline-none dark:focus:ring-teal-500"
                                 type="button">
                                 Cari
                             </button>
@@ -150,9 +149,8 @@
                 class="sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center mb-4 sm:mb-0">
                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
-                            class="font-semibold text-gray-900 dark:text-white">{{ $documents->firstItem() }}-{{ $documents->lastItem() }}</span>
-                        of <span
-                            class="font-semibold text-gray-900 dark:text-white">{{ $documents->total() }}</span></span>
+                            class="font-semibold text-gray-900 ">{{ $documents->firstItem() }}-{{ $documents->lastItem() }}</span>
+                        of <span class="font-semibold text-gray-900 ">{{ $documents->total() }}</span></span>
                 </div>
                 <div class="flex items-center space-x-3">
                     @if ($documents->previousPageUrl())
@@ -189,7 +187,7 @@
         <div class="relative w-full max-w-md max-h-full p-4">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button"
-                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 "
                     data-modal-hide="popup-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
@@ -216,7 +214,7 @@
                             Ya, saya yakin
                         </button>
                         <button data-modal-hide="popup-modal" type="button"
-                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600  dark:hover:bg-gray-700">
                             Tidak</button>
                     </form>
 
@@ -232,7 +230,7 @@
         <div class="relative w-full max-w-md max-h-full p-4">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <button type="button"
-                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 "
                     data-modal-hide="reject-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
@@ -259,7 +257,7 @@
                             Ya, saya yakin
                         </button>
                         <button data-modal-hide="reject-modal" type="button"
-                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600  dark:hover:bg-gray-700">
                             Tidak</button>
                     </form>
 

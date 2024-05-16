@@ -26,8 +26,10 @@ class LoginController extends Controller
             $user = Auth::user();
             if ($user->role == 1) {
                 return redirect()->route('mhs.dashboard')->with('success', 'Login Berhasil');
-            } else {
+            } elseif ($user->role == 2) {
                 return redirect()->route('dsn.dashboard')->with('success', 'Login Berhasil');
+            } else {
+                return redirect()->route('admin.dashboard')->with('success', 'Login Berhasil');
             }
         }
 

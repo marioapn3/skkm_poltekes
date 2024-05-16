@@ -37,16 +37,14 @@ class PDFController extends Controller
             $point +=    $document->detailLetterType->point;
         }
         $lts = LetterType::all();
-
-        // return view('pdf.skkm', compact('documents', 'point', 'lts'));
-        // $pdf = PDF::loadView('pdf.skkm', compact('documents', 'point', 'lts'))->setOptions(['dpi' => 150, 'isHtml5ParserEnabled' => true, 'defaultFont' => 'sans-serif'])->setPaper('f4', 'landscape');
-        // return $pdf->download('SKKM.pdf');
+        // foreach ($documents as $dcm) {
+        //     echo $dcm->file . '<br>';
+        //     // dd($dcm->file);
+        // }
         $pdf = LaravelMpdf::loadView('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
-
         return $pdf->stream(Auth::user()->name  . ' Transcript SKKM.pdf');
-
-
-        // PDF::
-        // return view('pdf.skkm', compact('documents', 'point', 'lts'));
     }
 }
+  // return view('pdf.skkm', compact('documents', 'point', 'lts'));
+        // $pdf = PDF::loadView('pdf.skkm', compact('documents', 'point', 'lts'))->setOptions(['dpi' => 150, 'isHtml5ParserEnabled' => true, 'defaultFont' => 'sans-serif'])->setPaper('f4', 'landscape');
+        // return $pdf->download('SKKM.pdf');

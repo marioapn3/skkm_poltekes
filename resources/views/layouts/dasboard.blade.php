@@ -14,9 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-quicksand">
     <x-toast-sweet-alert />
     <nav class="fixed top-0 z-40 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -52,24 +54,32 @@
                         <div class="z-40 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                             id="dropdown-user">
                             <div class="px-4 py-3" role="none">
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                <p class="text-sm text-gray-900 " role="none">
                                     {{ Auth::user()->name }}
                                 </p>
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                <p class="text-sm font-medium text-gray-900 truncate " role="none">
                                     {{ Auth::user()->email }}
                                 </p>
                             </div>
                             <ul class="py-1" role="none">
+                                @if (auth()->user()->role == 1)
+                                    <li>
+                                        <a href="{{ route('mhs.profile') }}"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 "
+                                            role="menuitem">Profile</a>
+                                    </li>
+                                @elseif(auth()->user()->role == 2)
+                                    <li>
+                                        <a href="{{ route('dsn.profile') }}"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 "
+                                            role="menuitem">Profile</a>
+                                    </li>
+                                @endif
 
-                                <li>
-                                    <a href="{{ route('mhs.profile') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        role="menuitem">Profile</a>
-                                </li>
 
                                 <li>
                                     <a href="{{ route('auth.logout') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 "
                                         role="menuitem">Logout</a>
                                 </li>
                             </ul>
@@ -81,15 +91,17 @@
     </nav>
     @if (auth()->user()->role == 1)
         <x-mhs-sidebar />
-    @else
+    @elseif(auth()->user()->role == 2)
         <x-dsn-sidebar />
+    @else
+        <x-admin-sidebar />
     @endif
 
     <div class="p-4 sm:ml-64">
         <div class= "mt-10">
             @yield('content')
         </div>
-        <div class="text-center my-5 ">
+        <div class="my-5 text-center ">
             <hr class="">
             <span class="block p-5 text-sm text-center ">© 2024 Kemenkes Poltekes Yogyakarta™. All
                 Rights Reserved. Built with Love
@@ -104,7 +116,7 @@
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
-                timer: 3000,
+                timer: 2000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                     toast.onmouseenter = Swal.stopTimer;
@@ -124,7 +136,7 @@
                 toast: true,
                 position: "top-end",
                 showConfirmButton: false,
-                timer: 3000,
+                timer: 2000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                     toast.onmouseenter = Swal.stopTimer;
@@ -145,7 +157,7 @@
                     toast: true,
                     position: "top-end",
                     showConfirmButton: false,
-                    timer: 3000,
+                    timer: 2000,
                     timerProgressBar: true,
                     didOpen: (toast) => {
                         toast.onmouseenter = Swal.stopTimer;

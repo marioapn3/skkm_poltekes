@@ -16,7 +16,7 @@
 
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Selamat Datang di Aplikasi
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl ">Selamat Datang di Aplikasi
                         Sirekam 👋</h1>
                     <p class="text-gray-500 ">Sistem kami siap membantu anda dalam mengelola Satuan Kredit Kegiatan
                         Mahasiswa </p>
@@ -25,56 +25,61 @@
             </div>
 
         </div>
+        {{-- <div class="gap-4 mt-4 grid-c md:grid-cols-2 "> --}}
         <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-4 2xl:grid-cols-4">
-            <div
-                class="flex items-center justify-between gap-5 p-4 bg-white border border-gray-200 rounded-lg shadow-sm lg:gap-0 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-                <div class="px-5 my-4 text-5xl ">
-                    <i class="fa fa-users" aria-hidden="true"></i>
+            <a href="#"
+                class="flex flex-col p-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+                <div
+                    class="flex items-center justify-center bg-teal-400 border border-teal-500 rounded-full shadow-inner w-14 h-14 ">
+                    <i class="text-2xl text-white fa-solid fa-user-group"></i>
                 </div>
-                <div class="w-full">
-                    <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Jumlah Mahasiswa</h3>
-                    <span
-                        class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $allStudents }}</span>
-                    {{-- @dd($data) --}}
-                </div>
-            </div>
-            <div
-                class="flex items-center justify-between gap-5 p-4 bg-white border border-gray-200 rounded-lg shadow-sm lg:gap-0 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-                <div class="px-5 my-4 text-5xl text-lime-500">
-                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                </div>
-                <div class="w-full">
-                    <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Semua Dokumen</h3>
-                    <span
-                        class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $all }}</span>
+                <div class="flex-1 text-end">
+                    <p class="text-gray-600 text-md ">Jumlah Mahasiswa</p>
+
+                    <h5 class="text-xl font-bold lg:text-2xl">{{ $allStudents }}</h5>
 
                 </div>
-            </div>
-            <div
-                class="flex items-center justify-between gap-5 p-4 bg-white border border-gray-200 rounded-lg shadow-sm lg:gap-0 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-                <div class="px-5 my-4 text-5xl text-green-500">
-                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+            </a>
+            <a href="#"
+                class="flex flex-col p-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+                <div
+                    class="flex items-center justify-center bg-teal-400 border border-teal-500 rounded-full shadow-inner w-14 h-14 ">
+                    <i class="text-2xl text-white fa-solid fa-file"></i>
                 </div>
-                <div class="w-full ">
-                    <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Dokumen Tervalidasi</h3>
-                    <span
-                        class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $valid }}</span>
+                <div class="flex-1 text-end ">
+                    <p class="text-gray-600 text-md ">Semua Dokumen</p>
+
+                    <h5 class="text-xl font-bold lg:text-2xl">{{ $all }}</h5>
 
                 </div>
-            </div>
-            <div
-                class="flex items-center justify-between gap-5 p-4 bg-white border border-gray-200 rounded-lg shadow-sm lg:gap-0 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-                <div class="px-5 my-4 text-5xl text-yellow-200">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+            </a>
+            <a href="#"
+                class="flex flex-col p-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+                <div
+                    class="flex items-center justify-center bg-teal-400 border border-teal-500 rounded-full shadow-inner w-14 h-14 ">
+
+                    <i class="text-2xl text-white fa-solid fa-check"></i>
                 </div>
-                <div class="w-full">
-                    <h3 class="text-base font-normal text-gray-500 dark:text-gray-400">Menunggu Validasi</h3>
-                    <span
-                        class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ $pending }}</span>
+                <div class="flex-1 text-end">
+                    <p class="text-gray-600 text-md ">Dokumen Tervalidasi</p>
+
+                    <h5 class="text-xl font-bold lg:text-2xl">{{ $valid }}</h5>
 
                 </div>
-            </div>
+            </a>
+            <a href="#"
+                class="flex flex-col p-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+                <div
+                    class="flex items-center justify-center bg-teal-400 border border-teal-500 rounded-full shadow-inner w-14 h-14 ">
+                    <i class="text-2xl text-white fa-solid fa-hourglass-half"></i>
+                </div>
+                <div class="flex-1 text-end">
+                    <p class="text-gray-600 text-md ">Menunggu Validasi</p>
 
+                    <h5 class="text-xl font-bold lg:text-2xl">{{ $pending }}</h5>
+
+                </div>
+            </a>
         </div>
 
 

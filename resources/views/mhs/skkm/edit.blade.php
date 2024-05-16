@@ -17,13 +17,13 @@
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
                                 <a href="{{ route('mhs.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                                    class="inline-flex items-center text-gray-700 hover:text-primary-600  ">
 
                                     Dashboard
                                 </a>
                             </li>
                             <li class="inline-flex items-center"><a href="{{ route('mhs.skkm.index') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white">
+                                    class="inline-flex items-center text-gray-700 hover:text-primary-600  ">
                                     <div class="flex items-center">
 
                                         <svg class="w-6 h-6 " fill="currentColor" viewBox="0 0 20 20"
@@ -45,13 +45,13 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd"></path>
                                     </svg>
-                                    <span class="ml-1 text-gray-400 md:ml-2 dark:text-gray-500" aria-current="page">Edit
+                                    <span class="ml-1 text-gray-400 md:ml-2 " aria-current="page">Edit
                                         Data</span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
-                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Edit SKKM</h1>
+                    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl ">Edit SKKM</h1>
                     <p class="text-gray-500 ">Silahkan edit data SKKM anda</p>
                 </div>
 
@@ -60,18 +60,18 @@
                 @csrf
                 <div class="grid grid-cols-1 gap-4 lg:pr-56 xl:pr-72 md:grid-cols-2">
                     <div class="col-span-1 md:col-span-2">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama
                             Kegiatan</label>
                         <input type="text" name="name" id="name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Nama Kegiatan yang dilaksanakan" value="{{ $document->name }}" required>
                     </div>
                     <div class="col-span-1 md:col-span-2">
-                        <label for="detail_letter_type_id"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis SKKM</label>
+                        <label for="detail_letter_type_id" class="block mb-2 text-sm font-medium text-gray-900 ">Jenis
+                            SKKM</label>
 
                         <select id="selectpicker" name="detail_letter_type_id"
-                            class="selectpicker border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="selectpicker border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             style="width: 100%" data-placeholder="Pilih Jenis SKKM" data-allow-clear="false"
                             title="Pilih Jenis SKKM">
                             {{-- <option value="">Pilih Jenis SKKM</option> --}}
@@ -101,10 +101,10 @@
                         </select>
                     </div>
                     <div class="col-span-1 md:col-span-2">
-                        <label for="point" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Angka
+                        <label for="point" class="block mb-2 text-sm font-medium text-gray-900 ">Angka
                             Kredit</label>
                         <input type="point" name="point" id="point"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Masukan point anda" required value="{{ $document->detailLetterType->point }}"
                             disabled>
                     </div>
@@ -123,14 +123,14 @@
                         });
                     </script>
                     <div class="col-span-1 md:col-span-2">
-                        <label for="no" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor
+                        <label for="no" class="block mb-2 text-sm font-medium text-gray-900 ">Nomor
                             Nomor SKKM</label>
                         <input type="text" name="no" id="no"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Nomor Kegiatan yang dilaksanakan" value="{{ $document->no }}">
                     </div>
                     <div class="col-span-1 md:col-span-2 ">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file">Upload
+                        <label class="block mb-2 text-sm font-medium text-gray-900 " for="file">Upload
                             file</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"

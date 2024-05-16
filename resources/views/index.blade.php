@@ -47,8 +47,7 @@
 <body class="font-quicksand">
     <header class="fixed z-50 w-full">
         <nav class="bg-white border-gray-200 py-2.5  ">
-            <div
-                class="flex flex-wrap items-center justify-between px-5 sm:px-10 md:px-15  lg:max-w-screen-xl    mx-auto">
+            <div class="flex flex-wrap items-center justify-between px-5 mx-auto sm:px-10 md:px-15 lg:max-w-screen-xl">
                 <a href="#" class="flex items-center">
                     <img src="{{ asset('assets/logo_kemenkes.png') }}" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
                     {{-- <span class="self-center text-xl font-semibold whitespace-nowrap ">SIREKAM</span> --}}
@@ -61,12 +60,12 @@
                             $dashboardRoute = $user->role == 1 ? 'mhs.dashboard' : 'dsn.dashboard';
                         @endphp
                         <a href="{{ route($dashboardRoute) }}"
-                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Dashboard</a>
+                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none ">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}"
                             class="rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Masuk</a>
                         <a href="{{ route('register') }}"
-                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">Daftar</a>
+                            class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none ">Daftar</a>
                     @endif
 
 
@@ -91,22 +90,22 @@
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
                             <a href="#home"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg: dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700">Home</a>
                         </li>
                         <li>
                             <a href="#fitur"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Fitur</a>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg: dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700">Fitur</a>
                         </li>
 
                         </li>
                         <li>
                             <a href="#faq"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">FAQ</a>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg: dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700">FAQ</a>
                         </li>
 
                         <li>
                             <a href="#contact"
-                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-teal-400 lg:p-0 dark:text-gray-400 lg: dark:hover:bg-gray-700 lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -119,17 +118,17 @@
     <!-- Start block -->
     <section class="bg-white b" id="home">
         <div
-            class="grid items-center justify-between max-w-screen-xl  px-5 sm:px-10 md:px-15 pt-20 pb-8 mx-auto md:mb-10 lg:gap-8 xl:gap-2 lg:py-16 lg:grid-cols-12 lg:pt-36">
+            class="grid items-center justify-between max-w-screen-xl px-5 pt-20 pb-8 mx-auto sm:px-10 md:px-15 md:mb-10 lg:gap-8 xl:gap-2 lg:py-16 lg:grid-cols-12 lg:pt-36">
             <div class="mr-auto place-self-center lg:col-span-7">
                 {{-- <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
-                    class="max-w-2xl mb-4 text-3xl  leading-none tracking-tight md:text-4xl xl:text-5xl  drop-shadow-2xl shadow-teal-400  font-extrabold   ">
+                    class="max-w-2xl mb-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl drop-shadow-2xl shadow-teal-400 ">
                     SIREKAM <br>
                 </h1> --}}
                 <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
-                    class="max-w-2xl md:mt-10 mb-4 text-3xl  leading-none tracking-wider md:text-4xl xl:text-5xl  font-extrabold text-teal-400 ">
+                    class="max-w-2xl mb-4 text-3xl font-extrabold leading-none tracking-wider text-teal-400 md:mt-10 md:text-4xl xl:text-5xl ">
                     SIREKAM</h1>
                 <h1 data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
-                    class="max-w-2xl mb-4 text-xl font-bold leading-none tracking-tight md:text-2xl xl:text-3xl  ">
+                    class="max-w-2xl mb-4 text-xl font-bold leading-none tracking-tight md:text-2xl xl:text-3xl ">
                     Aplikasi Perekapan dan Pengelolaan Dokumen Satuan Kredit Kegiatan Mahasiswa
 
                 </h1>
@@ -152,7 +151,7 @@
                         Mulai Sekarang
                     </a>
                     <a href="{{ route($dashboardRoute) }}"
-                        class="inline-flex items-center justify-center text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-teal-500 dark:hover:bg-teal-400 focus:outline-none dark:focus:ring-teal-600">
+                        class="inline-flex items-center justify-center text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0   focus:outline-none ">
                         Daftar Sekarang
                     </a>
 
@@ -176,7 +175,7 @@
                     <h2 class="text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] ">
                         Fitur Utama
                     </h2>
-                    <p class="text-lg text-body-color dark:text-dark-6 text-gray-500">
+                    <p class="text-lg text-gray-500 text-body-color dark:text-dark-6">
                         Cek Fitur Sirekam yang Bikin Pengelolaan SKKM Jadi Lebih Terstruktur!
                     </p>
                 </div>
@@ -277,7 +276,7 @@
             <h2 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200"
                 class=" text-3xl font-bold text-dark  sm:text-4xl md:text-[40px] md:leading-[1.2] text-center text-gray-900 mb-4  ">
                 Frequently Asked Questions</h2>
-            <p class="text-lg text-center text-body-color dark:text-dark-6 text-gray-500 mb-6" data-aos="fade-down"
+            <p class="mb-6 text-lg text-center text-gray-500 text-body-color dark:text-dark-6" data-aos="fade-down"
                 data-aos-duration="1000" data-aos-delay="200">
                 Cek Fitur Sirekam yang Bikin Pengelolaan SKKM Jadi Lebih Terstruktur!
             </p>
@@ -402,7 +401,7 @@
                 <div class="col-span-1 md:col-span-1">
                     <div class="">
                         {{-- <div class="bg-white rounded-lg"> --}}
-                        <img src="{{ asset('assets/logo_kemenkes.png') }}" width="160" class="p-2 bg-white mb-2"
+                        <img src="{{ asset('assets/logo_kemenkes.png') }}" width="160" class="p-2 mb-2 bg-white"
                             alt="">
                         {{-- </div> --}}
 
