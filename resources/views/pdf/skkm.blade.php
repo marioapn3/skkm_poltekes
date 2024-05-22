@@ -254,16 +254,16 @@
         </table>
     </div>
 
-    <div class="container">
-        {{-- Buatkan Grid 2 kali 2 --}}
-        {{-- @foreach ($lts as $lt)
+    {{-- <div class="container"> --}}
+    {{-- Buatkan Grid 2 kali 2 --}}
+    {{-- @foreach ($lts as $lt)
             <img src="{{ asset($lt->file) }}" alt="">
         @endforeach --}}
-        {{-- @dd($documents) --}}
-        @foreach ($documents as $dcm)
+    {{-- @dd($documents) --}}
+    {{-- @foreach ($documents as $dcm)
             <img src="{{ asset($dcm->file) }}" alt="">
-        @endforeach
-    </div>
+        @endforeach --}}
+    {{-- </div> --}}
 
 </body>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailLetterType;
 use App\Models\Document;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Termwind\Components\Dd;
@@ -49,9 +50,8 @@ class DocumentController extends Controller
             ]);
 
             $file = $request->file('file');
-            $originalFilename = $file->getClientOriginalName();
-            $path = $file->storeAs('public/skkm', $originalFilename);
-            $fileName = 'storage/' . str_replace('public/', '', $path);
+            $fileServices = new FileService();
+            $fileName = $fileServices->uploadFile($file);
             Document::create([
                 'name' => $request->name,
                 'file' => $fileName,
@@ -84,9 +84,8 @@ class DocumentController extends Controller
             ]);
             if ($request->file('file') != null) {
                 $file = $request->file('file');
-                $originalFilename = $file->getClientOriginalName();
-                $path = $file->storeAs('public/skkm', $originalFilename);
-                $fileName = 'storage/' . str_replace('public/', '', $path);
+                $fileServices = new FileService();
+                $fileName = $fileServices->uploadFile($file);
             }
             $document = Document::find($request->document_id);
             $document->update([
@@ -153,7 +152,7 @@ class DocumentController extends Controller
 
     // END Transkrip SKKM
 
-    // SKKM DOSEN
+    // SKKM DOSEN`
     public function skkmDosen()
     {
         $documents = Document::whereHas('student', function ($query) {
