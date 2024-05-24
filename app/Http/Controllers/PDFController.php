@@ -24,6 +24,7 @@ class PDFController extends Controller
 
         $pdf = PDF::loadView('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
         return $pdf->download(Auth::user()->name  . ' Transcript SKKM.pdf');
+        
         // foreach($dcms as $dcm){
         //    asset($dcm->file) ;
         // }
