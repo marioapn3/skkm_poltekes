@@ -103,8 +103,7 @@
         </div>
         <div class="my-5 text-center ">
             <hr class="">
-            <span class="block p-5 text-sm text-center ">© 2024 Kemenkes Poltekes Yogyakarta™. All
-                Rights Reserved. Built with Love
+            <span class="block p-5 text-sm text-center ">© 2024 Kemenkes Poltekes Yogyakarta™
             </span>
         </div>
     </div>
