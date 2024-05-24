@@ -9,12 +9,12 @@ class FileService
     {
         $fileName = Str::random(60);
         $extension = $file->getClientOriginalExtension();
-        $path = date('Y') . '/' . date('m') . '/' . date('d');
-        $pathName = '/storage/file/' . $path . '/' . $fileName . '.' . $extension;
 
-        Storage::put('/public/file/' . $path . '/' . $fileName . '.' . $extension, File::get($file));
+        $pathName = '/storage/' . $fileName . '.' . $extension;
 
-        return config('app.file_upload_endpoint') . $pathName;
+        Storage::put('/public/' . $fileName . '.' . $extension, File::get($file));
+
+        return  $pathName;
     }
 }
 
