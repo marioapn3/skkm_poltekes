@@ -9,10 +9,10 @@ class FileService
     {
         $fileName = Str::random(60);
         $extension = $file->getClientOriginalExtension();
+        $path = date('Y') . '/' . date('m') . '/' . date('d');
+        $pathName = '/storage/file/' . $path . '/' . $fileName . '.' . $extension;
 
-        $pathName = '/storage/' . $fileName . '.' . $extension;
-
-        Storage::put('/public/' . $fileName . '.' . $extension, File::get($file));
+        Storage::put('/public/file/' . $path . '/' . $fileName . '.' . $extension, File::get($file));
 
         return  $pathName;
     }
