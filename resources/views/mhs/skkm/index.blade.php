@@ -18,7 +18,7 @@
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
                                 <a href="{{ route('mhs.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-teal-600  ">
+                                    class="inline-flex items-center text-gray-700 hover:text-teal-600 ">
 
                                     Dashboard
                                 </a>
@@ -47,11 +47,11 @@
                             <label for="products-search" class="sr-only">Search</label>
                             <div class="relative w-48 sm:w-64 xl:w-96">
                                 <input type="text" name="query" id="products-search" value="{{ request('query') }}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                     placeholder="Cari SKKM">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white rounded-lg bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300  focus:outline-none dark:focus:ring-teal-500"
+                                class="px-5 text-sm font-medium text-white bg-teal-400 rounded-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300 focus:outline-none dark:focus:ring-teal-500"
                                 type="submit">
                                 Cari
                             </button>
@@ -167,10 +167,10 @@
                                         <div class="col-span-2 ">
 
                                             <label class="block mb-2 text-sm font-medium text-gray-900 "
-                                                for="file">Upload file</label>
+                                                for="file">Upload file (Dalam Format PDF)</label>
                                             <input
                                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                                aria-describedby="file" id="file" type="file" name="file">
+                                                aria-describedby="file" id="file" type="file" name="file"  accept="application/pdf">
 
                                         </div>
                                     </div>

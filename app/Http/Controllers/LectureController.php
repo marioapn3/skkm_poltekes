@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,9 +36,8 @@ class LectureController extends Controller
 
 
         $file = $request->file('signature_picture');
-        $originalFilename = $file->getClientOriginalName();
-        $path = $file->storeAs('public/signature', $originalFilename);
-        $fileName = 'storage/' . str_replace('public/', '', $path);
+        $fileServices = new FileService();
+        $fileName = $fileServices->uploadFile($file);
         $user->lecture()->update([
             'nip' => $request->nip,
             'signature_picture' => $fileName

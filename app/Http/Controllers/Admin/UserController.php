@@ -7,6 +7,7 @@ use App\Models\Lecture;
 use App\Models\Student;
 use App\Models\StudyProgram;
 use App\Models\User;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -107,12 +108,10 @@ class UserController extends Controller
         if (file_exists(public_path($fileLama))) {
             unlink(public_path($fileLama));
         }
-
-
         $file = $request->file('signature_picture');
-        $originalFilename = $file->getClientOriginalName();
-        $path = $file->storeAs('public/signature', $originalFilename);
-        $fileName = 'storage/' . str_replace('public/', '', $path);
+        $fileServices = new FileService();
+        $fileName = $fileServices->uploadFile($file);
+
         $user->lecture()->update([
             'nip' => $request->nip,
             'signature_picture' => $fileName
