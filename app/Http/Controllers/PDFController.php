@@ -38,6 +38,7 @@ class PDFController extends Controller
             $oMerger->addPDF(public_path($document->file));
         }
         $oMerger->merge();
+        $oMerger->setFileName('Transkrip SKKM.pdf');
         $oMerger->save('Transkrip SKKM.pdf');
         return $oMerger->download('');
         // $oMerger = PDFMerger::init();
