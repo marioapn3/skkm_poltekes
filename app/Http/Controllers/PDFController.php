@@ -24,13 +24,22 @@ class PDFController extends Controller
         $lts = LetterType::all();
 
         $pdf = PDF::loadView('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
-        // save file
-        $pdf->save(storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf'));
-        // return $pdf->download('Transcript SKKM.pdf');
+
+// Define the file path to save the PDF
+$fileName = Auth::user()->name . ' Transcript SKKM.pdf';
+$filePath = storage_path('app/public/' . $fileName);
+
+// Ensure the directory exists
+$directoryPath = storage_path('app/public');
+if (!is_dir($directoryPath)) {
+    mkdir($directoryPath, 0755, true); // Create the directory if it doesn't exist
+}
+
+// Save the PDF file
+$pdf->save($filePath);
+
         $oMerger = PDFMerger::init();
-
-
-
+        $oMerger->addPDF($filePath);
 
 
         // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
