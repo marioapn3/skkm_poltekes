@@ -35,7 +35,10 @@ class PDFController extends Controller
 
         // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
         foreach($documents as $document){
-            $oMerger->addPDF(public_path($document->file));
+            if($document->status == 'Validasi'){
+                $oMerger->addPDF(public_path($document->file));
+
+            }
         }
         $oMerger->merge();
         $oMerger->setFileName('Transkrip SKKM.pdf');
