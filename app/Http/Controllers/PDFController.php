@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 // use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
 use setasign\Fpdi\Fpdi;
 use setasign\Fpdi\PdfParser\StreamReader;
+use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
 use PDF;
 
 class PDFController extends Controller
@@ -23,52 +24,42 @@ class PDFController extends Controller
         $lts = LetterType::all();
 
         $pdf = PDF::loadView('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
-        return $pdf->download(Auth::user()->name  . ' Transcript SKKM.pdf');
-        
-        // foreach($dcms as $dcm){
-        //    asset($dcm->file) ;
-        // }
+        // save file
+        $pdf->save(storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf'));
+        // return $pdf->download('Transcript SKKM.pdf');
+        $oMerger = PDFMerger::init();
 
-        // // return $pdf->download(Auth::user()->name  . ' Transcript SKKM.pdf');
-        //   // Save the generated PDF to a temporary file
-        //   $generatedPdfPath = storage_path('app/public/temp/generated_pdf.pdf');
-        //   file_put_contents($generatedPdfPath, $pdf->output());
 
-        //   // Initialize FPDI
-        //   $fpdi = new Fpdi();
 
-        //   // Add the generated PDF
-        //   $pageCount = $fpdi->setSourceFile($generatedPdfPath);
-        //   for ($page = 1; $page <= $pageCount; $page++) {
-        //       $templateId = $fpdi->importPage($page);
-        //       $size = $fpdi->getTemplateSize($templateId);
-        //       $fpdi->AddPage($size['orientation'], [$size['width'], $size['height']]);
-        //       $fpdi->useTemplate($templateId);
-        //   }
 
-        //   foreach ($documents as $document) {
-        //     $filePath = storage_path('app/public/' . $document->file); // Adjust the path according to your setup
-        //     if (file_exists($filePath)) {
-        //         $pageCount = $fpdi->setSourceFile($filePath);
-        //         for ($page = 1; $page <= $pageCount; $page++) {
-        //             $templateId = $fpdi->importPage($page);
-        //             $size = $fpdi->getTemplateSize($templateId);
-        //             $fpdi->AddPage($size['orientation'], [$size['width'], $size['height']]);
-        //             $fpdi->useTemplate($templateId);
-        //         }
-        //     }
-        // }
 
-        // // Output the final PDF
-        // $output = $fpdi->Output('S');
+        // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
+        foreach($documents as $document){
+            $oMerger->addPDF(public_path($document->file));
+        }
+        $oMerger->merge();
+        $oMerger->save('Transkrip SKKM.pdf');
+        return $oMerger->download('');
+        // $oMerger = PDFMerger::init();
+        // $pdf->save(storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf'));
 
-        // // Send the response to the browser
-        // $finalPdfName = Auth::user()->name . ' Transcript SKKM.pdf';
-
-        // return response($output, 200)
-        //     ->header('Content-Type', 'application/pdf')
-        //     ->header('Content-Disposition', "attachment; filename=\"{$finalPdfName}\"");
-
+        // $newFile = storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf');
+        // // add file kedalam oMerger
+        // $oMerger->addPDF($newFile);
+        // // foreach ($documents as $document) {
+        // //     // file asset
+        // //     $file = asset($document->file);
+        // //     // check if file exists
+        // //     if (file_exists(public_path($document->file))) {
+        // //         // add file to the merger
+        // //         $oMerger->addPDF($file);
+        // //     } else {
+        // //         echo "File does not exist: $file";
+        // //     }
+        // // }
+        // // merge file
+        // $oMerger->merge();
+        // // download file
+        // $oMerger->download(Auth::user()->name . ' Transcript SKKM.pdf');
     }
-
 }

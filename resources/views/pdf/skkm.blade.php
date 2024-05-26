@@ -201,7 +201,10 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td class="footer-kiri"></td>
+                    <td class="footer-kiri">
+                        <br>
+                        Mengetahui / Menyetujui
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -211,20 +214,30 @@
                     <td class="footer-kanan">Yogyakarta, @php
                         $date = date('d F Y');
                         echo $date;
-                    @endphp</td>
+                    @endphp
+                        <br>Dosen Pembimbing Akademik
+                    </td>
                 </tr>
                 <tr>
-                    <td>Mengetahui / Menyetujui</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Dosen Pembimbing Akademik</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr class="">
-                    <td class="tanda-tangan"> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><img src="{{ public_path(Auth::user()->student->lecture->signature_picture) }}" alt=""
+                            width="100"></td>
                 </tr>
 
                 <tr>
@@ -237,7 +250,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Nurun Laasara, S.Kep.Ns, M.Kep</td>
+                    <td>{{ Auth::user()->student->lecture->user->name }}</td>
                 </tr>
                 <tr>
                     <td>NIP : </td>
@@ -247,7 +260,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>NIP :</td>
+                    <td>NIP : {{ Auth::user()->student->lecture->nip }}</td>
                 </tr>
             </tbody>
 
