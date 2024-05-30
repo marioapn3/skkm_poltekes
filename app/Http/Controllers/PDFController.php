@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Document;
 use App\Models\LetterType;
 use Illuminate\Support\Facades\Auth;
-// use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
-use setasign\Fpdi\Fpdi;
-use setasign\Fpdi\PdfParser\StreamReader;
+use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
 use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
-use PDF;
+// use PDF;
+// use PDF;
 
 class PDFController extends Controller
 {
@@ -23,7 +22,7 @@ class PDFController extends Controller
         }
         $lts = LetterType::all();
 
-        $pdf = PDF::loadView('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        $pdf = PDF::loadView('pdf.skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
 
         // Define the file path to save the PDF
         $fileName = Auth::user()->name . ' Transcript SKKM.pdf';
