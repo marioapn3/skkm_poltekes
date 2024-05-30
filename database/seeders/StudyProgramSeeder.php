@@ -37,6 +37,7 @@ class StudyProgramSeeder extends Seeder
         foreach ($study_programs as $study_program) {
             StudyProgram::create([
                 'name' => $study_program,
+                'head_of_study' => 1,
             ]);
         }
     }

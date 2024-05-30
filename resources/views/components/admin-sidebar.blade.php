@@ -4,23 +4,18 @@
        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
            <ul class="space-y-2 font-medium">
 
-               <li>
-                   <a href="{{ route('admin.dashboard') }}"
-                       class="{{ Request::is('admin/dashboard') ? 'bg-gray-100' : '' }} flex items-center p-2 rounded-lg  text-gray-90  hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                       {{-- <svg class="{{ Request::is('admin/dashboard') ? 'text-gray-900' : '' }} w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                           aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                           <path
-                               d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                           <path
-                               d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                       </svg> --}}
-                       <i class="fa-solid fa-chart-pie"></i>
-                       <span class="ms-3">Dashboard</span>
-                   </a>
-               </li>
+            <li>
+                <a href="{{ route('admin.dashboard') }}"
+                    class="{{ Request::is('admin/dashboard') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }} flex items-center p-2 rounded-lg  text-gray-90  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="ms-3">Dashboard</span>
+                </a>
+            </li>
+
+
                {{-- <li>
                    <a href="{{ route('admin.users.index') }}"
-                       class="{{ Request::is('admin/dashboard/users*') ? 'bg-gray-100' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                       class="{{ Request::is('admin/dashboard/users*') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }} flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
                        <svg class=" {{ Request::is('admin/dashboard/users*') ? 'text-gray-900' : '' }} flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                            viewBox="0 0 18 18">
@@ -32,7 +27,7 @@
                </li> --}}
                <li>
                    <button type="button"
-                       class="{{ Request::is('admin/dashboard/users*') ? 'bg-gray-100' : '' }} flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100  dark:hover:bg-gray-700"
+                       class="{{ Request::is('admin/dashboard/users*') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }} flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100  dark:hover:bg-gray-700"
                        aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                        <i class="fas fa-user"></i>
                        <span class="flex-1 text-left ms-3 rtl:text-right whitespace-nowrap">Users</span>
@@ -45,7 +40,7 @@
                    <ul id="dropdown-example" class="hidden py-2 space-y-2">
                        <li>
                            <a href="{{ route('admin.users.mahasiswa.index') }}"
-                               class="{{ Request::is('admin/dashboard/users/mahasiswa*') ? 'bg-gray-100' : '' }}  flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700">
+                               class="{{ Request::is('admin/dashboard/users/mahasiswa*') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }}  flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700">
                                <i class="mr-2 fas fa-user-graduate "></i>
                                Mahasiswa</a>
 
@@ -53,17 +48,24 @@
                        </li>
                        <li>
                            <a href="{{ route('admin.users.dosen.index') }}"
-                               class="{{ Request::is('admin/dashboard/users/dosen*') ? 'bg-gray-100' : '' }}  flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700">
+                               class="{{ Request::is('admin/dashboard/users/dosen*') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }}  flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100  dark:hover:bg-gray-700">
                                <i class="mr-2 fas fa-chalkboard-teacher"></i>
                                Dosen</a>
                        </li>
 
                    </ul>
                </li>
+               <li>
+                <a href="{{ route('admin.study-program.index') }}"
+                    class="{{ Request::is('admin/dashboard/study-program*') ? 'bg-teal-400 text-white hover:bg-teal-400 hover:text-white' : '' }} flex items-center p-2 rounded-lg  text-gray-90  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="ms-3">Program Studi</span>
+                </a>
+            </li>
 
                <li>
                    <a href="{{ route('auth.logout') }}"
-                       class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
                        <i class="fas fa-sign-out-alt"></i>
                        <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
                    </a>

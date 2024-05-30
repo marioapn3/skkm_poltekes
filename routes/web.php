@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\StudyProgramController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\StudentController;
+use App\Models\StudyProgram;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -107,4 +109,16 @@ Route::name('admin.')->middleware('auth')->prefix('admin/dashboard')->group(func
     });
 
     Route::resource('users', UserController::class);
+
+    Route::prefix('study-program')->name('study-program.')->group(function(){
+        Route::controller(StudyProgramController::class)->group(function(){
+            Route::get('/' , 'index')->name('index');
+            Route::post('/store' , 'store')->name('store');
+            Route::get('/create' , 'create')->name('create');
+            Route::delete('/delete' , 'delete')->name('delete');
+            Route::get('/search' , 'search')->name('search');
+            Route::put('update/{id}', 'update')->name('update');
+            Route::get('edit/{id}' , 'edit')->name('edit');
+        });
+    });
 });

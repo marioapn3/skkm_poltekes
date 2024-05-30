@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('study_programs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('head_of_study')->constrained('lectures');
             $table->timestamps();
         });
     }

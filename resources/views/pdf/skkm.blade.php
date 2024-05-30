@@ -229,7 +229,9 @@
                     <td></td>
                 </tr>
                 <tr class="">
-                    <td></td>
+                    <td>
+                        <img src="{{ public_path( Auth::user()->student->studyProgram->headStudy->signature_picture) }}" alt=""  width="100">
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -242,7 +244,7 @@
 
                 <tr>
                     <td>
-                        Dr Catur Budi Susilo, S.Pd, S.Kp, M.Kes
+                        {{ Auth::user()->student->studyProgram->headStudy->user->name }}
                     </td>
                     <td></td>
                     <td></td>
@@ -253,7 +255,7 @@
                     <td>{{ Auth::user()->student->lecture->user->name }}</td>
                 </tr>
                 <tr>
-                    <td>NIP : </td>
+                    <td>NIP : {{  Auth::user()->student->studyProgram->headStudy->nip }}</td>
                     <td></td>
                     <td></td>
                     <td></td>
