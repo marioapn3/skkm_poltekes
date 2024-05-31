@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use App\Models\LetterType;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
 use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
@@ -23,19 +24,13 @@ class PDFController extends Controller
         $lts = LetterType::all();
 
         $pdf = PDF::loadView('pdf.skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        $currentDate = Carbon::now()->format('Y-m-d');
+        $userName = Auth::user()->name;
+        $sanitizedUserName = str_replace(' ', '_', $userName);
+        $filePath = storage_path("app/public/{$currentDate}_{$sanitizedUserName}.pdf");
 
-        // Define the file path to save the PDF
-        $fileName = Auth::user()->name . ' Transcript SKKM.pdf';
-        $filePath = storage_path('app/public/' . $fileName);
-
-        // Ensure the directory exists
-        $directoryPath = storage_path('app/public');
-        if (!is_dir($directoryPath)) {
-            mkdir($directoryPath, 0755, true); // Create the directory if it doesn't exist
-        }
-
-        // Save the PDF file
         $pdf->save($filePath);
+
 
         $oMerger = PDFMerger::init();
         $oMerger->addPDF($filePath);
@@ -51,26 +46,5 @@ class PDFController extends Controller
         $oMerger->setFileName('Transkrip SKKM.pdf');
         $oMerger->save('Transkrip SKKM.pdf');
         return $oMerger->download('');
-        // $oMerger = PDFMerger::init();
-        // $pdf->save(storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf'));
-
-        // $newFile = storage_path('app/public/' . Auth::user()->name . ' Transcript SKKM.pdf');
-        // // add file kedalam oMerger
-        // $oMerger->addPDF($newFile);
-        // // foreach ($documents as $document) {
-        // //     // file asset
-        // //     $file = asset($document->file);
-        // //     // check if file exists
-        // //     if (file_exists(public_path($document->file))) {
-        // //         // add file to the merger
-        // //         $oMerger->addPDF($file);
-        // //     } else {
-        // //         echo "File does not exist: $file";
-        // //     }
-        // // }
-        // // merge file
-        // $oMerger->merge();
-        // // download file
-        // $oMerger->download(Auth::user()->name . ' Transcript SKKM.pdf');
     }
 }
