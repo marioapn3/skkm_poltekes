@@ -23,7 +23,7 @@ class PDFController extends Controller
         }
         $lts = LetterType::all();
 
-        $pdf = PDF::loadView('pdf.skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        $pdf = PDF::loadView('skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
         $currentDate = Carbon::now()->format('Y-m-d');
         $userName = Auth::user()->name;
         $sanitizedUserName = str_replace(' ', '_', $userName);
