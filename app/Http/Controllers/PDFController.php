@@ -15,6 +15,14 @@ class PDFController extends Controller
 {
     public function downloadPDF()
     {
+        if (
+            Auth::user()->student->lecture_id == null ||
+            Auth::user()->student->study_program_id == null ||
+            Auth::user()->student->semester == null ||
+            Auth::user()->student->nim == null
+        ) {
+            return redirect()->back()->with('error', 'Lengkapi data diri terlebih dahulu');
+        }
         $documents = Document::where('student_id', auth()->user()->student->id)->where('status', 'Validasi')->get();
         $dcms = Document::where('student_id', auth()->user()->student->id)->where('status', 'Validasi')->get();
         $point = 0;
