@@ -228,8 +228,8 @@
                 </tr>
                 <tr class="">
                     <td>
-                        <img src="{{ public_path(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
-                            alt="" width="100">
+                        {{-- <img src="{{ public_path(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
+                            alt="" width="100px"> --}}
                     </td>
                     <td></td>
                     <td></td>
@@ -237,8 +237,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><img src="{{ public_path(Auth::user()->student->lecture->signature_picture) }}" alt=""
-                            width="100"></td>
+                    {{-- <td><img src="{{ public_path(Auth::user()->student->lecture->signature_picture) }}" alt=""
+                            width="100px"></td> --}}
                 </tr>
 
                 <tr>
@@ -268,16 +268,6 @@
         </table>
     </div>
 
-    {{-- <div class="container"> --}}
-    {{-- Buatkan Grid 2 kali 2 --}}
-    {{-- @foreach ($lts as $lt)
-            <img src="{{ asset($lt->file) }}" alt="">
-        @endforeach --}}
-    {{-- @dd($documents) --}}
-    {{-- @foreach ($documents as $dcm)
-            <img src="{{ asset($dcm->file) }}" alt="">
-        @endforeach --}}
-    {{-- </div> --}}
 
 </body>
 
