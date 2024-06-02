@@ -19,7 +19,7 @@
                         <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                             <li class="inline-flex items-center">
                                 <a href="{{ route('admin.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600  ">
+                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 ">
                                     Dashboard
                                 </a>
                             </li>
@@ -31,7 +31,7 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                                 <a href="{{ route('admin.dashboard') }}"
-                                    class="inline-flex items-center text-gray-700 hover:text-primary-600  ">
+                                    class="inline-flex items-center text-gray-700 hover:text-primary-600 ">
                                     Users
                                 </a>
                             </li>
@@ -60,11 +60,11 @@
                             <label for="products-search" class="sr-only">Search</label>
                             <div class="relative w-48 sm:w-64 xl:w-96">
                                 <input type="text" name="query" id="products-search" value="{{ request('query') }}"
-                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500"
                                     placeholder="Cari Akun Mahasiswa">
                             </div>
                             <button
-                                class="px-5 text-sm font-medium text-white bg-teal-400 rounded-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300  focus:outline-none dark:focus:ring-teal-500"
+                                class="px-5 text-sm font-medium text-white bg-teal-400 rounded-lg hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 dark:bg-teal-300 focus:outline-none dark:focus:ring-teal-500"
                                 type="submit">
                                 Cari
                             </button>
@@ -113,7 +113,8 @@
                                                 placeholder="Nama Mahasiswa" required="">
                                         </div>
                                         <div class="col-span-2">
-                                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Nama
+                                            <label for="email"
+                                                class="block mb-2 text-sm font-medium text-gray-900 ">Email
                                                 Mahasiswa</label>
                                             <input type="email" name="email" id="email"
                                                 class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-teal-500 dark:focus:border-teal-500"
