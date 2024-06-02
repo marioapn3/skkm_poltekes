@@ -230,6 +230,8 @@
                     <td>
                         {{-- <img src="{{ public_path(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
                             alt="" width="100px"> --}}
+                        <img src="{{ asset(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
+                            alt="" style="width: 100px">
                     </td>
                     <td></td>
                     <td></td>
@@ -237,6 +239,10 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td>
+                        <img src="{{ asset(Auth::user()->student->lecture->signature_picture) }}" alt=""
+                            style="width: 100px">
+                    </td>
                     {{-- <td><img src="{{ public_path(Auth::user()->student->lecture->signature_picture) }}" alt=""
                             width="100px"></td> --}}
                 </tr>
