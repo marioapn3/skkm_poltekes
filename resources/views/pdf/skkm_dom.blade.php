@@ -174,20 +174,20 @@
                         @foreach ($lts as $lt)
                             <td>
                                 @if ($dc->detailLetterType->letterType->id == $lt->id)
-                                    √
+                                    V
                                 @endif
                             </td>
                         @endforeach
                         <td>Sertifikat Nomor {{ $dc->no }}</td>
                         <td>{{ $dc->detailLetterType->point }}</td>
-                        <td>√</td>
+                        <td>V</td>
                     </tr>
                 @endforeach
                 <tr>
                     <td colspan="2">Jumlah Angka Kredit : </td>
                     <td colspan="14"></td>
                     <td colspan="">{{ $point }}</td>
-                    <td></td>
+                    <td> V</td>
                 </tr>
             </tbody>
         </table>

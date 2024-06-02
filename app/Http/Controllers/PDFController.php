@@ -47,10 +47,10 @@ class PDFController extends Controller
         $currentDate = Carbon::now()->format('Y-m-d');
         $userName = Auth::user()->name;
         $sanitizedUserName = str_replace(' ', '_', $userName);
-        $filePath = storage_path("app/public/{$currentDate}_{$sanitizedUserName}.pdf");
+        $filepath = $currentDate . '_' . $sanitizedUserName . '.pdf';
+        $pdf->save($filepath);
 
-        $pdf->save($filePath);
-
+        $filePath = public_path($filepath);
 
         $oMerger = PDFMerger::init();
         $oMerger->addPDF($filePath);
