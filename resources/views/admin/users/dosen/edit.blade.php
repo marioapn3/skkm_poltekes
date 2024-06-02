@@ -58,7 +58,7 @@
                 </div>
             </div>
             {{-- input untuk update nama, email, nim, prodi, semester --}}
-            <form action="{{ route('admin.users.dosen.update', $user->id) }}" method="post">
+            <form action="{{ route('admin.users.dosen.update', $user->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="grid grid-cols-1 gap-4 lg:pr-56 xl:pr-72 md:grid-cols-2">
                     <div class="col-span-1 md:col-span-2">

@@ -97,7 +97,7 @@ class UserController extends Controller
             'email' => 'required',
             'signature_picture' => 'required'
         ]);
-        $user = User::find(auth()->user()->id);
+        $user = User::find($id);
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -105,9 +105,9 @@ class UserController extends Controller
 
         $fileLama = $user->lecture->signature_picture;
 
-        if (file_exists(public_path($fileLama))) {
-            unlink(public_path($fileLama));
-        }
+        // if (file_exists(public_path($fileLama))) {
+        //     unlink(public_path($fileLama));
+        // }
         $file = $request->file('signature_picture');
         $fileServices = new FileService();
         $fileName = $fileServices->uploadFile($file);
@@ -116,7 +116,6 @@ class UserController extends Controller
             'nip' => $request->nip,
             'signature_picture' => $fileName
         ]);
-        return redirect()->back()->with('success', 'Profile updated successfully');
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
 

@@ -6,7 +6,8 @@ use App\Models\Document;
 use App\Models\LetterType;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
+// use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
 // use PDF;
 // use PDF;
@@ -31,29 +32,39 @@ class PDFController extends Controller
         }
         $lts = LetterType::all();
 
-        $pdf = PDF::loadView('skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
-        // $currentDate = Carbon::now()->format('Y-m-d');
-        // $userName = Auth::user()->name;
-        // $sanitizedUserName = str_replace(' ', '_', $userName);
-        // $filePath = storage_path("app/public/{$currentDate}_{$sanitizedUserName}.pdf");
+        // $pdf = Pdf::loadView('skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        $data = [
+            'documents' => $documents,
+            'dcms' => $dcms,
+            'point' => $point,
+            'lts' => $lts
+        ];
+        $pdf = Pdf::loadView('pdf.skkm_dom', $data)
+            ->setPaper('f4', 'landscape');
+        // return $pdf->stream();
 
-        // $pdf->save($filePath);
+
+        $currentDate = Carbon::now()->format('Y-m-d');
+        $userName = Auth::user()->name;
+        $sanitizedUserName = str_replace(' ', '_', $userName);
+        $filePath = storage_path("app/public/{$currentDate}_{$sanitizedUserName}.pdf");
+
+        $pdf->save($filePath);
 
 
-        // $oMerger = PDFMerger::init();
-        // $oMerger->addPDF($filePath);
+        $oMerger = PDFMerger::init();
+        $oMerger->addPDF($filePath);
 
 
-        // // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
-        // foreach ($documents as $document) {
-        //     if ($document->status == 'Validasi') {
-        //         $oMerger->addPDF(public_path($document->file));
-        //     }
-        // }
-        // $oMerger->merge();
-        // $oMerger->setFileName('Transkrip SKKM.pdf');
-        // $oMerger->save('Transkrip SKKM.pdf');
-        // return $oMerger->download('');
-        $pdf->stream('Transkrip SKKM.pdf');
+        // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
+        foreach ($documents as $document) {
+            if ($document->status == 'Validasi') {
+                $oMerger->addPDF(public_path($document->file));
+            }
+        }
+        $oMerger->merge();
+        $oMerger->setFileName('Transkrip SKKM.pdf');
+        $oMerger->save('Transkrip SKKM.pdf');
+        return $oMerger->download('');
     }
 }
