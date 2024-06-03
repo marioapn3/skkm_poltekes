@@ -47,45 +47,45 @@ class PDFController extends Controller
             'signaturePicture2' => $signaturePicture2,
         ];
 
-        // return view('pdf.skkm_dom', $data);
-        $pdf = Pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
-            ->setHttpContext(
-                stream_context_create([
-                    'ssl' => [
-                        'allow_self_signed' => true,
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                    ]
-                ])
-            )
-            ->loadView('pdf.skkm_dom', $data)
-            ->setPaper('f4', 'landscape');
-        // return $pdf->stream();
+        return view('pdf.skkm_dom', $data);
+        // $pdf = Pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+        //     ->setHttpContext(
+        //         stream_context_create([
+        //             'ssl' => [
+        //                 'allow_self_signed' => true,
+        //                 'verify_peer' => false,
+        //                 'verify_peer_name' => false,
+        //             ]
+        //         ])
+        //     )
+        //     ->loadView('pdf.skkm_dom', $data)
+        //     ->setPaper('f4', 'landscape');
+        // // return $pdf->stream();
 
 
-        $currentDate = Carbon::now()->format('Y-m-d');
-        $userName = Auth::user()->name;
-        $sanitizedUserName = str_replace(' ', '_', $userName);
-        $filepath = $currentDate . '_' . $sanitizedUserName . '.pdf';
-        $pdf->save($filepath);
+        // $currentDate = Carbon::now()->format('Y-m-d');
+        // $userName = Auth::user()->name;
+        // $sanitizedUserName = str_replace(' ', '_', $userName);
+        // $filepath = $currentDate . '_' . $sanitizedUserName . '.pdf';
+        // $pdf->save($filepath);
 
-        $filePath = public_path($filepath);
+        // $filePath = public_path($filepath);
 
-        $oMerger = PDFMerger::init();
-        $oMerger->addPDF($filePath);
+        // $oMerger = PDFMerger::init();
+        // $oMerger->addPDF($filePath);
 
 
-        // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
-        foreach ($documents as $document) {
-            if ($document->status == 'Validasi') {
-                $oMerger->addPDF(public_path($document->file));
-            }
-        }
-        $oMerger->merge();
-        $oMerger->setFileName('Transkrip SKKM.pdf');
-        $oMerger->save('Transkrip SKKM.pdf');
-        // return $oMerger->download('');
-        return $oMerger->stream();
+        // // return view('pdf.skkm', compact('documents', 'dcms', 'point', 'lts'));
+        // foreach ($documents as $document) {
+        //     if ($document->status == 'Validasi') {
+        //         $oMerger->addPDF(public_path($document->file));
+        //     }
+        // }
+        // $oMerger->merge();
+        // $oMerger->setFileName('Transkrip SKKM.pdf');
+        // $oMerger->save('Transkrip SKKM.pdf');
+        // // return $oMerger->download('');
+        // return $oMerger->stream();
     }
 
     private function convertImageToBase64($imageUrl)
