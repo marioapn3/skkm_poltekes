@@ -49,6 +49,15 @@ class PDFController extends Controller
 
         // return view('pdf.skkm_dom', $data);
         $pdf = Pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+            ->setHttpContext(
+                stream_context_create([
+                    'ssl' => [
+                        'allow_self_signed' => true,
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ]
+                ])
+            )
             ->loadView('pdf.skkm_dom', $data)
             ->setPaper('f4', 'landscape');
         // return $pdf->stream();
