@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use App\Models\LetterType;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 // use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
@@ -32,14 +33,23 @@ class PDFController extends Controller
         }
         $lts = LetterType::all();
 
-        // $pdf = Pdf::loadView('skkm_data', compact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        // $pdf = Pdf::loadView('skkm_data', co mpact('documents', 'dcms', 'point', 'lts'), [], ['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L']);
+        $user = User::find(Auth::user()->id);
+        $signaturePicture1 = $this->convertImageToBase64(public_path($user->student->studyProgram->headStudy->signature_picture));
+        $signaturePicture2 = $this->convertImageToBase64(public_path($user->student->lecture->signature_picture));
+
         $data = [
             'documents' => $documents,
             'dcms' => $dcms,
             'point' => $point,
-            'lts' => $lts
+            'lts' => $lts,
+            'signaturePicture1' => $signaturePicture1,
+            'signaturePicture2' => $signaturePicture2,
         ];
-        $pdf = Pdf::loadView('pdf.skkm_dom', $data)
+
+        // return view('pdf.skkm_dom', $data);
+        $pdf = Pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+            ->loadView('pdf.skkm_dom', $data)
             ->setPaper('f4', 'landscape');
         // return $pdf->stream();
 
@@ -65,6 +75,16 @@ class PDFController extends Controller
         $oMerger->merge();
         $oMerger->setFileName('Transkrip SKKM.pdf');
         $oMerger->save('Transkrip SKKM.pdf');
-        return $oMerger->download('');
+        // return $oMerger->download('');
+        return $oMerger->stream();
+    }
+
+    private function convertImageToBase64($imageUrl)
+    {
+        $imageData = file_get_contents($imageUrl);
+        $base64 = base64_encode($imageData);
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->buffer($imageData);
+        return 'data:' . $mimeType . ';base64,' . $base64;
     }
 }

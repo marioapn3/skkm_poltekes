@@ -86,7 +86,7 @@
                             Gambar Tanda Tangan</label>
                         <input type="file" onchange="loadFile(event)"
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            id="file_input" name="signature_picture">
+                            id="file_input" name="signature_picture" accept=".jpg">
 
                         <img id='preview_img' class="object-cover w-auto h-40 mt-4 border border-gray-300 bg-gray-50 "
                             src="{{ asset($user->lecture->signature_picture) }}" alt="Current profile photo" />

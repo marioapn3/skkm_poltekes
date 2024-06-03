@@ -228,10 +228,12 @@
                 </tr>
                 <tr class="">
                     <td>
-                        {{-- <img src="{{ public_path(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
+                        <img src="{{ $signaturePicture1 }}" width="100px">
+                        {{-- <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
                             alt="" width="100px"> --}}
-                        <img src="{{ asset(Auth::user()->student->studyProgram->headStudy->signature_picture) }}"
-                            alt="" style="width: 100px">
+                        {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(asset(Auth::user()->student->studyProgram->headStudy->signature_picture))) }}"
+                            alt="" style="width: 100px"> --}}
+
                     </td>
                     <td></td>
                     <td></td>
@@ -240,8 +242,11 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <img src="{{ asset(Auth::user()->student->lecture->signature_picture) }}" alt=""
-                            style="width: 100px">
+                        <img src="{{ $signaturePicture2 }}" width="100px">
+                        {{-- <img src="{{ asset(Auth::user()->student->lecture->signature_picture) }}" alt=""
+                            width="100px"> --}}
+                        {{-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents(asset(Auth::user()->student->lecture->signature_picture))) }}"
+                            alt="" style="width: 100px"> --}}
                     </td>
                     {{-- <td><img src="{{ public_path(Auth::user()->student->lecture->signature_picture) }}" alt=""
                             width="100px"></td> --}}
