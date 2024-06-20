@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-
+@section('title', 'Akun Dosen - Poltekes Yogyakarta')
 @section('content')
     <div class="px-4 pt-6 rounded-lg">
         <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -302,13 +302,13 @@
                     <span class="sr-only">Close modal</span>
                 </button>
                 <div class="p-4 text-center md:p-5">
-                    <svg class="w-12 h-12 mx-auto mb-4 text-gray-400 dark:text-gray-200" aria-hidden="true"
+                    <svg class="w-12 h-12 mx-auto mb-4 text-red-500" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin menolak
-                        SKKM ini?
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin menghapus
+                        akun dosen ini?
                     </h3>
                     <form action="{{ route('admin.users.delete') }}" method="POST">
                         @method('delete')

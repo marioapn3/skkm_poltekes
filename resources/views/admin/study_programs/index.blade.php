@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-
+@section('title', 'Program Studi - Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -56,7 +56,7 @@
                         </form>
 
                     </div>
-                        <a href="{{ route('admin.study-program.create') }}"
+                    <a href="{{ route('admin.study-program.create') }}"
                         class="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-teal-300  focus:outline-none dark:focus:ring-teal-500"
                         type="button">
                         Buat Program Studi

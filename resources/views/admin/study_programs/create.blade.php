@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'Update Profile - Poltekes Yogyakarta')
+@section('title', 'Tambah Program Studi- Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -61,17 +61,17 @@
                             Program Studi</label>
                         <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukan nama anda"  required>
+                            placeholder="Masukan nama anda" required>
                     </div>
 
                     <div class="col-span-1 md:col-span-2">
-                        <label for="lecture_id" class="block mb-2 text-sm font-medium text-gray-900 ">Kepala Program Studi</label>
+                        <label for="lecture_id" class="block mb-2 text-sm font-medium text-gray-900 ">Kepala Program
+                            Studi</label>
                         <select id="lecture" name="head_of_study"
                             class="lecture border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             style="width: 100%" data-placeholder="Pilih Dosen Pembimbing" data-allow-clear="false"
                             title="Pilih Dosen Pembimbing">
                             @foreach ($lectures as $lecture)
-
                                 <option value="{{ $lecture->id }}">{{ $lecture->user->name }} - {{ $lecture->nip }}
                                 </option>
                             @endforeach

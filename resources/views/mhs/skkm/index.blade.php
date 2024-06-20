@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'SKKM - Poltekes Yogyakarta')
+@section('title', 'Data SKKM - Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -170,7 +170,8 @@
                                                 for="file">Upload file (Dalam Format PDF)</label>
                                             <input
                                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                                aria-describedby="file" id="file" type="file" name="file"  accept="application/pdf">
+                                                aria-describedby="file" id="file" type="file" name="file"
+                                                accept="application/pdf">
 
                                         </div>
                                     </div>
