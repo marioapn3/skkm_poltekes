@@ -37,7 +37,12 @@ class PDFController extends Controller
         $user = User::find(Auth::user()->id);
         $signaturePicture1 = $this->convertImageToBase64(public_path($user->student->studyProgram->headStudy->signature_picture));
         $signaturePicture2 = $this->convertImageToBase64(public_path($user->student->lecture->signature_picture));
-
+        if ($signaturePicture1 == null) {
+            return redirect()->back()->with('error', 'Hubungi Admin karena Tanda tangan Ketua Program Studi belum diatur');
+        }
+        if ($signaturePicture2 == null) {
+            return redirect()->back()->with('error', 'Hubungi Admin karena Tanda tangan Dosen belum diatur');
+        }
         $data = [
             'documents' => $documents,
             'dcms' => $dcms,

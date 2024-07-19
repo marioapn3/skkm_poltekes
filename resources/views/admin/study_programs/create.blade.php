@@ -61,7 +61,7 @@
                             Program Studi</label>
                         <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukan nama anda" required>
+                            placeholder="Masukan nama program studi" required>
                     </div>
 
                     <div class="col-span-1 md:col-span-2">
