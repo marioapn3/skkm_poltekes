@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-
+@section('title', 'Akun Mahasiswa - Poltekes Yogyakarta')
 @section('content')
     <div class="px-4 pt-6 rounded-lg">
         <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -315,7 +315,7 @@
                             d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin menghapus
-                        user ini?
+                        akun mahasiswa ini?
                     </h3>
                     <form action="{{ route('admin.users.delete') }}" method="POST">
                         @method('delete')

@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'SIREKAM - Poltekes Yogyakarta')
+@section('title', 'Dashboard Mahasiswa - Poltekes Yogyakarta')
 @section('content')
 
     <div class="px-4 pt-6">

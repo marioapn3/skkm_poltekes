@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'SKKM - Poltekes Yogyakarta')
+@section('title', 'Ubah Data SKKM - Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>

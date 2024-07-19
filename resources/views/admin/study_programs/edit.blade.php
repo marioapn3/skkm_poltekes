@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'Update Profile - Poltekes Yogyakarta')
+@section('title', 'Ubah Program Studi - Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -82,7 +82,8 @@
                             @else
                                 <option selected value="">Pilih Dosen</option>
                             @endif --}}
-                            <option selected value="{{ $studyProgram->head_of_study }}">{{ $studyProgram->headStudy->user->name }} - {{ $studyProgram->headStudy->nip }}</option>
+                            <option selected value="{{ $studyProgram->head_of_study }}">
+                                {{ $studyProgram->headStudy->user->name }} - {{ $studyProgram->headStudy->nip }}</option>
                             @foreach ($lectures as $lecture)
                                 @if ($studyProgram->head_of_study == $lecture->id)
                                     @continue

@@ -1,5 +1,5 @@
 @extends('layouts.dasboard')
-@section('title', 'Update Profile - Poltekes Yogyakarta')
+@section('title', 'Update Profile Mahasiswa - Poltekes Yogyakarta')
 @section('content')
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -121,7 +121,7 @@
                         </select>
 
                     </div>
-                    
+
                     {{-- buatkan button submit nya --}}
                     <div class="col-span-1 mt-2 md:col-span-2">
                         <button type="submit"
