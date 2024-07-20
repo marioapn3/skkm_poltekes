@@ -255,14 +255,14 @@
                     <td>{{ Auth::user()->student->lecture->user->name }}</td>
                 </tr>
                 <tr>
-                    <td>NIP : {{  Auth::user()->student->studyProgram->headStudy->nip }}</td>
+                    <td>NIP {{  Auth::user()->student->studyProgram->headStudy->nip }}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>NIP : {{ Auth::user()->student->lecture->nip }}</td>
+                    <td>NIP {{ Auth::user()->student->lecture->nip }}</td>
                 </tr>
             </tbody>
 
