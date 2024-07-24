@@ -28,13 +28,16 @@ class LectureController extends Controller
             'email' => $request->email,
         ]);
 
-        $fileLama = $user->lecture->signature_picture;
 
-        if (file_exists(public_path($fileLama))) {
-            unlink(public_path($fileLama));
-        }
 
         if ($request->hasFile('signature_picture')) {
+
+            $fileLama = $user->lecture->signature_picture;
+
+            if (file_exists(public_path($fileLama))) {
+                unlink(public_path($fileLama));
+            }
+            
             $file = $request->file('signature_picture');
             $fileServices = new FileService();
             $fileName = $fileServices->uploadFile($file);
