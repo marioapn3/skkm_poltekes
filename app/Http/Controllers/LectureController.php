@@ -20,7 +20,7 @@ class LectureController extends Controller
             'nip' => 'required',
             'name' => 'required',
             'email' => 'required',
-            'signature_picture' => 'required'
+            'signature_picture' => 'nullable'
         ]);
         $user = User::find(auth()->user()->id);
         $user->update([
@@ -34,14 +34,20 @@ class LectureController extends Controller
             unlink(public_path($fileLama));
         }
 
+        if ($request->hasFile('signature_picture')) {
+            $file = $request->file('signature_picture');
+            $fileServices = new FileService();
+            $fileName = $fileServices->uploadFile($file);
+            $user->lecture()->update([
+                'nip' => $request->nip,
+                'signature_picture' => $fileName
+            ]);
+        } else {
+            $user->lecture()->update([
+                'nip' => $request->nip
+            ]);
+        }
 
-        $file = $request->file('signature_picture');
-        $fileServices = new FileService();
-        $fileName = $fileServices->uploadFile($file);
-        $user->lecture()->update([
-            'nip' => $request->nip,
-            'signature_picture' => $fileName
-        ]);
         return redirect()->back()->with('success', 'Profile updated successfully');
     }
 }
